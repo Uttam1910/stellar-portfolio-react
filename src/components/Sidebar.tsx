@@ -1,65 +1,37 @@
 import React from 'react';
-import { Link, useLocation } from 'react-router-dom';
-
-
+import { Link } from 'react-router-dom';
+import { FaHome, FaUser, FaBriefcase, FaProjectDiagram, FaCode, FaGraduationCap, FaEnvelope, FaFileAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Sidebar: React.FC = () => {
-  const location = useLocation();
-  const currentPage = location.pathname.split('/').pop();
-
   return (
-    <aside className="bg-gray-900 w-64 p-6">
-      <nav>
-        <ul className="list-none p-0">
-          <li id="profile-picture" className="flex justify-center mb-6">
-            <img
-              src="/images/uttam.jpg"
-              alt="Profile Picture"
-              className="w-48 h-56 rounded-full border-4 border-teal-500"
-            />
-          </li>
-          <li className="my-4">
-            <Link to="/" className={`flex items-center text-white text-lg ${currentPage === "" ? "underline" : ""}`}>
-              <i className="fas fa-home mr-2"></i> Home
-            </Link>
-          </li>
-          <li className="my-4">
-            <Link to="/about" className={`flex items-center text-white text-lg ${currentPage === "about" ? "underline" : ""}`}>
-              <i className="fas fa-user mr-2"></i> About
-            </Link>
-          </li>
-          <li className="my-4">
-            <Link to="/experience" className={`flex items-center text-white text-lg ${currentPage === "experience" ? "underline" : ""}`}>
-              <i className="fas fa-briefcase mr-2"></i> Experience
-            </Link>
-          </li>
-          <li className="my-4">
-            <Link to="/projects" className={`flex items-center text-white text-lg ${currentPage === "projects" ? "underline" : ""}`}>
-              <i className="fas fa-project-diagram mr-2"></i> Projects
-            </Link>
-          </li>
-          <li className="my-4">
-            <Link to="/skills" className={`flex items-center text-white text-lg ${currentPage === "skills" ? "underline" : ""}`}>
-              <i className="fas fa-code mr-2"></i> Skills
-            </Link>
-          </li>
-          <li className="my-4">
-            <Link to="/education" className={`flex items-center text-white text-lg ${currentPage === "education" ? "underline" : ""}`}>
-              <i className="fas fa-graduation-cap mr-2"></i> Education
-            </Link>
-          </li>
-          <li className="my-4">
-            <Link to="/contact" className={`flex items-center text-white text-lg ${currentPage === "contact" ? "underline" : ""}`}>
-              <i className="fas fa-envelope mr-2"></i> Contact
-            </Link>
-          </li>
-          <li className="my-4">
-            <a href="/pdf/jobresume.pdf" target="_blank" className="flex items-center text-white text-lg">
-              <i className="fas fa-file-alt mr-2"></i> Resume
-            </a>
-          </li>
+    <aside className="w-64 bg-gray-800 text-white h-full flex flex-col">
+      <div className="flex items-center justify-center p-4">
+        <img src="images/uttam.jpg" alt="Profile" className="w-24 h-24 rounded-full border-4 border-teal-400"/>
+        <div className="ml-4">
+          <h2 className="text-xl font-semibold">Uttam</h2>
+          <p className="text-sm">Computer Science Student</p>
+        </div>
+      </div>
+      <nav className="flex-1">
+        <ul className="flex flex-col space-y-1">
+          <li><Link to="/" className="flex items-center p-4 hover:bg-teal-700"><FaHome className="mr-3"/> Home</Link></li>
+          <li><Link to="/about" className="flex items-center p-4 hover:bg-teal-700"><FaUser className="mr-3"/> About</Link></li>
+          <li><Link to="/experience" className="flex items-center p-4 hover:bg-teal-700"><FaBriefcase className="mr-3"/> Experience</Link></li>
+          <li><Link to="/projects" className="flex items-center p-4 hover:bg-teal-700"><FaProjectDiagram className="mr-3"/> Projects</Link></li>
+          <li><Link to="/skills" className="flex items-center p-4 hover:bg-teal-700"><FaCode className="mr-3"/> Skills</Link></li>
+          <li><Link to="/education" className="flex items-center p-4 hover:bg-teal-700"><FaGraduationCap className="mr-3"/> Education</Link></li>
+          <li><Link to="/contact" className="flex items-center p-4 hover:bg-teal-700"><FaEnvelope className="mr-3"/> Contact</Link></li>
+          <li><a href="pdf/jobresume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 hover:bg-teal-700"><FaFileAlt className="mr-3"/> Resume</a></li>
         </ul>
       </nav>
+      <div className="p-4 flex justify-center space-x-4 bg-gray-900">
+        <a href="https://www.linkedin.com/in/uttam/" target="_blank" rel="noopener noreferrer" className="text-teal-300 hover:text-teal-500">
+          <FaLinkedin size={24} />
+        </a>
+        <a href="https://github.com/uttam" target="_blank" rel="noopener noreferrer" className="text-teal-300 hover:text-teal-500">
+          <FaGithub size={24} />
+        </a>
+      </div>
     </aside>
   );
 };
