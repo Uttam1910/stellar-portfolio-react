@@ -17,8 +17,8 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <main className="flex-1 p-10 flex flex-col items-center justify-center text-center overflow-y-auto">
-      <section id="intro" className="max-w-4xl">
+    <main className="flex flex-col items-center justify-center min-h-screen p-10 bg-gray-100 text-center">
+      <section id="intro" className="max-w-4xl ml-64">
         <h1 className="text-4xl mb-4">Hi, I'm Uttam</h1>
         <p className="text-lg mb-4"><span id="typed-element"></span></p>
         <p className="text-lg mb-8">Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving complex and challenging real-world problems.</p>
@@ -33,8 +33,8 @@ const Home: React.FC = () => {
         </div>
         
         <div className="buttons flex justify-center space-x-4">
-          <a href="/about" className="btn bg-teal-500 text-gray-900 py-2 px-4 rounded-md hover:bg-gray-900 hover:text-teal-500 border border-teal-500">Read More</a>
-          <a href="/contact" className="btn bg-teal-500 text-gray-900 py-2 px-4 rounded-md hover:bg-gray-900 hover:text-teal-500 border border-teal-500">Contact Me</a>
+          <a href="/about" className="bg-teal-500 text-gray-900 py-2 px-4 rounded-md hover:bg-gray-900 hover:text-teal-500 border border-teal-500">Read More</a>
+          <a href="/contact" className="bg-teal-500 text-gray-900 py-2 px-4 rounded-md hover:bg-gray-900 hover:text-teal-500 border border-teal-500">Contact Me</a>
         </div>
       </section>
     </main>
@@ -42,5 +42,3 @@ const Home: React.FC = () => {
 };
 
 export default Home;
-
-

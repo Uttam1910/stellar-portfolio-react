@@ -2,8 +2,8 @@ import React from 'react';
 
 const About: React.FC = () => {
   return (
-    <main className="flex-1 p-10 flex flex-col items-center justify-center text-center overflow-y-auto">
-      <section id="about" className="about-content bg-white p-8 rounded-lg shadow-lg max-w-4xl text-center">
+    <main className="flex-1 p-10 flex flex-col items-center justify-center min-h-screen bg-gray-100">
+      <section id="about" className="about-content bg-white p-8 rounded-lg shadow-lg max-w-4xl text-center ml-64">
         <h1 className="text-4xl mb-6 text-primary">About Me</h1>
         <p className="text-lg mb-6 text-secondary">
           Hi, I'm Uttam, a final year student pursuing a Bachelor's in Computer Science and Engineering with a specialization in AI and ML. I'm an enthusiastic and competitive student eager to contribute to team success through hard work, attention to detail, and excellent organizational skills.

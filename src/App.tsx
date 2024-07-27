@@ -9,24 +9,25 @@ import Skills from './pages/Skills';
 import Education from './pages/Education';
 import Contact from './pages/Contact';
 
-const App: React.FC = () => {
+function App() {
   return (
     <Router>
-      <div className="flex h-screen">
+      <div className="flex">
         <Sidebar />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/experience" element={<Experience />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/skills" element={<Skills />} />
-          <Route path="/education" element={<Education />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/experience" element={<Experience />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/skills" element={<Skills />} />
+            <Route path="/education" element={<Education />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
       </div>
     </Router>
   );
-};
+}
 
 export default App;
-
