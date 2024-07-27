@@ -24,10 +24,10 @@ const Home: React.FC = () => {
         <p className="text-lg mb-8">A highly motivated and enthusiastic programmer with a passion for solving complex real-world problems. With a curious and analytical mind, I thrive in challenging environments and consistently deliver innovative solutions. My self-driven attitude and quick adaptability make me a valuable asset in any project or team.</p>
         
         <div className="social-links flex justify-center mb-8 space-x-4">
-          <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" className="text-teal-500 text-3xl hover:text-teal-400">
+          <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" rel="noopener noreferrer" className="text-teal-500 text-3xl hover:text-teal-400">
             <BsLinkedin />
           </a>
-          <a href="https://github.com/uttam1910" target="_blank" className="text-teal-500 text-3xl hover:text-teal-400">
+          <a href="https://github.com/uttam1910" target="_blank" rel="noopener noreferrer" className="text-teal-500 text-3xl hover:text-teal-400">
             <BsGithub />
           </a>
         </div>
