@@ -4,41 +4,53 @@ import ProjectCard from '../components/ProjectCard';
 const Projects = () => {
   const projects = [
     {
-      title: 'Project 1',
-      thumbnail: "/images/avtar.png",
-      githubLink: 'https://github.com/yourusername/project1',
+      title: 'LMS',
+      thumbnail: "/images/LMS.png",
+      githubLink: 'https://github.com/Uttam1910/EduMaster',
       description: 'This is a brief description of Project 1, here i had done testing.'
     },
     {
-      title: 'Project 2',
-      thumbnail: '/path/to/thumbnail2.jpg',
-      githubLink: 'https://github.com/yourusername/project2',
+      title: 'Portfolio',
+      thumbnail: '/images/avtar.png',
+      githubLink: 'https://github.com/Uttam1910/stellar-portfolio-react',
       description: 'This is a brief description of Project 2.'
     },
     {
-      title: 'Project 3',
-      thumbnail: '/path/to/thumbnail3.jpg',
-      githubLink: 'https://github.com/yourusername/project3',
+      title: 'Pokedex',
+      thumbnail: '/images/pokedex.jpg',
+      githubLink: 'https://github.com/Uttam1910/Pokedex-App',
       description: 'This is a brief description of Project 3.'
     },
     {
-      title: 'Project 4',
-      thumbnail: '/path/to/thumbnail4.jpg',
-      githubLink: 'https://github.com/yourusername/project4',
+      title: 'eCommerceWebsite',
+      thumbnail: '/images/eCommerce.png',
+      githubLink: 'https://github.com/Uttam1910/eCommerceWebsite',
+      description: 'This is a brief description of Project 6.'
+    },
+    {
+      title: 'Tic-Tac-Toe',
+      thumbnail: '/images/tic-tac-toe.png',
+      githubLink: 'https://github.com/Uttam1910/react-tic-tac-toe',
       description: 'This is a brief description of Project 4.'
     },
     {
-      title: 'Project 5',
-      thumbnail: '/path/to/thumbnail5.jpg',
-      githubLink: 'https://github.com/yourusername/project5',
+      title: 'Connect-four-game',
+      thumbnail: '/images/connect.png',
+      githubLink: 'https://github.com/Uttam1910/connect-four-game',
       description: 'This is a brief description of Project 5.'
     },
     {
-      title: 'Project 6',
-      thumbnail: '/path/to/thumbnail6.jpg',
-      githubLink: 'https://github.com/yourusername/project6',
-      description: 'This is a brief description of Project 6.'
-    }
+      title: 'counter-app',
+      thumbnail: '/images/counter.jpg',
+      githubLink: 'https://github.com/Uttam1910/connect-four-game',
+      description: 'This is a brief description of Project 5.'
+    },
+    {
+      title: 'To-Do-List-App-with-Task-History',
+      thumbnail: '/images/todolist.png',
+      githubLink: 'https://github.com/Uttam1910/counter-app',
+      description: 'This is a brief description of Project 5.'
+    },
   ];
 
   return (
