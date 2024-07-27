@@ -7,6 +7,7 @@ const Contact: React.FC = () => {
     email: '',
     message: '',
   });
+  const [isSending, setIsSending] = useState(false); // New state to track sending status
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -15,16 +16,18 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSending(true); // Set sending status to true
 
     const serviceID = 'service_buykzno';
     const templateID = 'template_abvk0hf';
-    const publicKey = 'Gbe4xpVzZuljow_P7'; // Add your public key here
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || ''; // Fetch from environment variables
 
-    // Initialize EmailJS with your public key (if necessary)
+    // Initialize EmailJS with your public key
     // @ts-ignore
     emailjs.init(publicKey);
 
-    emailjs.send(
+    // Using `as any` to avoid TypeScript error
+    (emailjs.send as any)(
       serviceID,
       templateID,
       {
@@ -32,14 +35,16 @@ const Contact: React.FC = () => {
         from_email: formData.email,
         message: `Message: ${formData.message}\n\nEmail: ${formData.email}`,
       },
-      // Gbe4xpVzZuljow_P7 // Add your public key here
+      publicKey // Add your public key here
     ).then((response: { status: number; text: string }) => {
       console.log('Mail sent successfully:', response.status, response.text);
       alert('Mail sent successfully');
       setFormData({ name: '', email: '', message: '' }); // Clear the form fields
+      setIsSending(false); // Reset sending status
     }).catch((error: { text: string }) => {
       console.error('Error sending email:', error);
       alert('Error sending email: ' + error.text);
+      setIsSending(false); // Reset sending status
     });
   };
 
@@ -102,7 +107,13 @@ const Contact: React.FC = () => {
                 className="w-full p-2 border border-gray-300 rounded-md"
               />
             </div>
-            <button type="submit" className="w-full py-3 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700">Send</button>
+            <button
+              type="submit"
+              className="w-full py-3 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700"
+              disabled={isSending} // Disable the button while sending
+            >
+              {isSending ? 'Sending...' : 'Send'}
+            </button>
           </form>
         </section>
       </main>

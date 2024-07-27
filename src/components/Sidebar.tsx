@@ -26,10 +26,10 @@ const Sidebar: React.FC = () => {
         </ul>
       </nav>
       <div className="p-4 flex justify-center space-x-4 bg-gray-900">
-        <a href="https://www.linkedin.com/in/uttam/" target="_blank" rel="noopener noreferrer" className="text-teal-300 hover:text-teal-500">
+        <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" rel="noopener noreferrer" className="text-teal-300 hover:text-teal-500">
           <FaLinkedin size={24} />
         </a>
-        <a href="https://github.com/uttam" target="_blank" rel="noopener noreferrer" className="text-teal-300 hover:text-teal-500">
+        <a href="https://github.com/uttam1910" target="_blank" rel="noopener noreferrer" className="text-teal-300 hover:text-teal-500">
           <FaGithub size={24} />
         </a>
       </div>

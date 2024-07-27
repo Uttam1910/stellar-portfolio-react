@@ -9,6 +9,9 @@ import Skills from './pages/Skills';
 import Education from './pages/Education';
 import Contact from './pages/Contact';
 
+
+
+
 function App() {
   return (
     <Router>
