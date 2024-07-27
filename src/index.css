@@ -30,3 +30,12 @@ code {
 .about-content:hover {
   transform: scale(1.05);
 }
+/* Tailwind CSS Flip Effect */
+@layer utilities {
+  .rotate-y-180 {
+    transform: rotateY(180deg);
+  }
+  .backface-hidden {
+    backface-visibility: hidden;
+  }
+}
