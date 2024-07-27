@@ -56,13 +56,13 @@ const Contact: React.FC = () => {
           <div className="text-center mb-6">
             <p className="text-gray-700">You can reach out to me via the following platforms:</p>
             <div className="flex justify-center space-x-6 mt-4">
-              <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+              <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
                 <i className="fab fa-linkedin"></i> <span>LinkedIn</span>
               </a>
-              <a href="https://github.com/your-profile" target="_blank" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+              <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
                 <i className="fab fa-github"></i> <span>GitHub</span>
               </a>
-              <a href="https://twitter.com/your-profile" target="_blank" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+              <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
                 <i className="fab fa-twitter"></i> <span>Twitter</span>
               </a>
               <a href="mailto:your-email@example.com" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
