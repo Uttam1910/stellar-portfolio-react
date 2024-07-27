@@ -1,35 +1,112 @@
-import React, { useRef } from 'react';
-import emailjs from 'emailjs-com';
+import React, { useState } from 'react';
+import emailjs from '@emailjs/browser';
 
 const Contact: React.FC = () => {
-  const form = useRef<HTMLFormElement>(null);
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: '',
+  });
 
-  const sendEmail = (e: React.FormEvent) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
-    if (form.current) {
-      emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_USER_ID')
-        .then((result: { text: string }) => {
-          console.log(result.text);
-        }, (error: { text: string }) => {
-          console.log(error.text);
-        });
-    }
+    const serviceID = 'service_buykzno';
+    const templateID = 'template_abvk0hf';
+    const publicKey = 'Gbe4xpVzZuljow_P7'; // Add your public key here
+
+    // Initialize EmailJS with your public key (if necessary)
+    // @ts-ignore
+    emailjs.init(publicKey);
+
+    emailjs.send(
+      serviceID,
+      templateID,
+      {
+        from_name: formData.name,
+        from_email: formData.email,
+        message: `Message: ${formData.message}\n\nEmail: ${formData.email}`,
+      },
+      // Gbe4xpVzZuljow_P7 // Add your public key here
+    ).then((response: { status: number; text: string }) => {
+      console.log('Mail sent successfully:', response.status, response.text);
+      alert('Mail sent successfully');
+      setFormData({ name: '', email: '', message: '' }); // Clear the form fields
+    }).catch((error: { text: string }) => {
+      console.error('Error sending email:', error);
+      alert('Error sending email: ' + error.text);
+    });
   };
 
   return (
-    <section id="contact" className="p-8">
-      <h1 className="text-4xl font-bold mb-4">Contact Me</h1>
-      <form ref={form} onSubmit={sendEmail}>
-        <label>Name</label>
-        <input type="text" name="name" required />
-        <label>Email</label>
-        <input type="email" name="email" required />
-        <label>Message</label>
-        <textarea name="message" required></textarea>
-        <button type="submit">Send</button>
-      </form>
-    </section>
+    <div className="container mx-auto p-4">
+      <main className="ml-64 p-4">
+        <section id="contact" className="bg-gray-100 p-8 rounded-lg shadow-lg">
+          <h1 className="text-center text-3xl mb-6 text-gray-800">Contact</h1>
+          <div className="text-center mb-6">
+            <p className="text-gray-700">You can reach out to me via the following platforms:</p>
+            <div className="flex justify-center space-x-6 mt-4">
+              <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+                <i className="fab fa-linkedin"></i> <span>LinkedIn</span>
+              </a>
+              <a href="https://github.com/your-profile" target="_blank" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+                <i className="fab fa-github"></i> <span>GitHub</span>
+              </a>
+              <a href="https://twitter.com/your-profile" target="_blank" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+                <i className="fab fa-twitter"></i> <span>Twitter</span>
+              </a>
+              <a href="mailto:your-email@example.com" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+                <i className="fas fa-envelope"></i> <span>Email</span>
+              </a>
+            </div>
+          </div>
+          <form id="contact-form" onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md">
+            <div className="form-group mb-4">
+              <label htmlFor="name" className="block text-gray-700 font-bold mb-2">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+            </div>
+            <div className="form-group mb-4">
+              <label htmlFor="email" className="block text-gray-700 font-bold mb-2">Email:</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+            </div>
+            <div className="form-group mb-4">
+              <label htmlFor="message" className="block text-gray-700 font-bold mb-2">Message:</label>
+              <textarea
+                id="message"
+                name="message"
+                rows={5}
+                required
+                value={formData.message}
+                onChange={handleChange}
+                className="w-full p-2 border border-gray-300 rounded-md"
+              />
+            </div>
+            <button type="submit" className="w-full py-3 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700">Send</button>
+          </form>
+        </section>
+      </main>
+    </div>
   );
 };
 
