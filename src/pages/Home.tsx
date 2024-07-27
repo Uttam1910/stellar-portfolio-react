@@ -5,7 +5,7 @@ import { BsLinkedin, BsGithub } from 'react-icons/bs';
 const Home: React.FC = () => {
   useEffect(() => {
     const typed = new Typed('#typed-element', {
-      strings: ['A Pythonist.', 'A Software Developer.', 'A Web Designer.', 'An Engineering Student.'],
+      strings: ['A Web Developer.', 'A Software Developer.', 'A Pythonist.', 'An Engineering Student.'],
       typeSpeed: 50,
       backSpeed: 25,
       loop: true,
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
       <section id="intro" className="max-w-4xl ml-64">
         <h1 className="text-4xl mb-4">Hi, I'm Uttam</h1>
         <p className="text-lg mb-4"><span id="typed-element"></span></p>
-        <p className="text-lg mb-8">Self-driven, quick starter, passionate programmer with a curious mind who enjoys solving complex and challenging real-world problems.</p>
+        <p className="text-lg mb-8">A highly motivated and enthusiastic programmer with a passion for solving complex real-world problems. With a curious and analytical mind, I thrive in challenging environments and consistently deliver innovative solutions. My self-driven attitude and quick adaptability make me a valuable asset in any project or team.</p>
         
         <div className="social-links flex justify-center mb-8 space-x-4">
           <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" className="text-teal-500 text-3xl hover:text-teal-400">
