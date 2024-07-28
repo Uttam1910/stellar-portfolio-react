@@ -2,7 +2,7 @@ import React from 'react';
 
 const Education: React.FC = () => {
   return (
-    <section id="education" className="bg-gray-100 py-16 ml-64 px-4">
+    <section id="education" className="bg-gray-100 py-16 px-4 lg:ml-64">
       <div className="container mx-auto text-center">
         <h1 className="text-4xl font-extrabold text-black mb-12 uppercase tracking-tight">
           Education
@@ -51,4 +51,3 @@ const Education: React.FC = () => {
 };
 
 export default Education;
-
