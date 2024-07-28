@@ -5,11 +5,11 @@ const About: React.FC = () => {
     <main className="flex-1 p-10 flex flex-col items-center justify-center min-h-screen bg-gray-100">
       <section
         id="about"
-        className="about-content bg-white p-8 rounded-lg shadow-lg max-w-4xl text-center ml-64"
+        className="about-content bg-white p-8 rounded-lg shadow-lg max-w-4xl text-center lg:ml-64 mx-4"
       >
         <h1 className="text-4xl mb-6 text-primary">About Me</h1>
         <p className="text-lg mb-6 text-secondary">
-          Hi, I'm Uttam I'm a final-year student pursuing a Bachelor's in
+          Hi, I'm Uttam. I'm a final-year student pursuing a Bachelor's in
           Computer Science and Engineering with a specialization in AI and ML.
           As an enthusiastic and competitive student, I am eager to contribute
           to team success through hard work, attention to detail, and excellent
@@ -21,20 +21,12 @@ const About: React.FC = () => {
           excel in developing innovative solutions in both experimental and
           practical coding environments. My expertise includes:
         </p>
-        {/* <p className="text-lg mb-6 text-secondary">
-          <b>Web Development:</b> Proficient in building responsive and dynamic
-          web applications using modern technologies. <br />
-          <b>AI and Machine Learning:</b> Skilled in developing and implementing
-          machine learning algorithms and models. <br />
-          <b>Database Management:</b> Experienced in designing, implementing,
-          and managing databases to ensure data integrity and performance.
-        </p> */}
         <h2 className="text-3xl mb-6 text-primary">Technical Skills</h2>
         <div className="skills flex flex-wrap justify-center gap-4 mb-6">
           <div className="skill bg-primary text-white py-2 px-4 rounded-full flex items-center">
             <i className="fas fa-code mr-2"></i>
             <span>
-              Languages: Python,JavaScript, Java, C/C++, HTML/CSS, PHP, SQL
+              Languages: Python, JavaScript, Java, C/C++, HTML/CSS, PHP, SQL
             </span>
           </div>
           <div className="skill bg-primary text-white py-2 px-4 rounded-full flex items-center">
@@ -49,20 +41,17 @@ const About: React.FC = () => {
             <i className="fas fa-cogs mr-2"></i>
             <span>
               Frameworks: Express.js, React, Node.js, Tailwind CSS, Bootstrap
-              {/* PyTorch, */}
-              
             </span>
           </div>
           <div className="skill bg-primary text-white py-2 px-4 rounded-full flex items-center">
             <i className="fas fa-tools mr-2"></i>
             <span>
               Tools & Technologies: Git, Docker, AWS
-              {/* GCP, Heroku, JIRA */}
             </span>
           </div>
         </div>
         <p className="text-lg text-secondary">
-        I am passionate about exploring new technologies and continually improving my skills to solve complex and significant real-world problems. I am seeking an opportunity to work in a position that combines my skills in Software Engineering, offers professional development, provides interesting experiences, and fosters personal growth.
+          I am passionate about exploring new technologies and continually improving my skills to solve complex and significant real-world problems. I am seeking an opportunity to work in a position that combines my skills in Software Engineering, offers professional development, provides interesting experiences, and fosters personal growth.
         </p>
       </section>
     </main>
