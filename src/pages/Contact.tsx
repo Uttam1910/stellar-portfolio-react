@@ -59,13 +59,13 @@ const Contact: React.FC = () => {
               <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
                 <i className="fab fa-linkedin"></i> <span>LinkedIn</span>
               </a>
-              <a href="https://github.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+              <a href="https://github.com/uttam1910" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
                 <i className="fab fa-github"></i> <span>GitHub</span>
               </a>
               <a href="https://twitter.com/your-profile" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
                 <i className="fab fa-twitter"></i> <span>Twitter</span>
               </a>
-              <a href="mailto:your-email@example.com" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
+              <a href="mailto:ut224365@gmail.com" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
                 <i className="fas fa-envelope"></i> <span>Email</span>
               </a>
             </div>
