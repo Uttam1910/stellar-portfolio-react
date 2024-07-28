@@ -21,7 +21,7 @@ const Skills: React.FC = () => {
               Web Development
             </h2>
             <p className="text-base leading-relaxed">
-              HTML, CSS, React, Node.js, Angular, Vue.js
+              HTML, CSS, React, Node.js, Express.js
             </p>
           </div>
           <div className="bg-gray-200 text-gray-800 p-8 rounded-lg shadow-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 transition-transform transform-gpu hover:scale-105 hover:shadow-2xl">
@@ -29,7 +29,7 @@ const Skills: React.FC = () => {
               Database Management
             </h2>
             <p className="text-base leading-relaxed">
-              MySQL, MongoDB, PostgreSQL, Firebase
+              MySQL, MongoDB
             </p>
           </div>
           <div className="bg-gray-200 text-gray-800 p-8 rounded-lg shadow-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 transition-transform transform-gpu hover:scale-105 hover:shadow-2xl">
@@ -45,7 +45,7 @@ const Skills: React.FC = () => {
               Tools & Technologies
             </h2>
             <p className="text-base leading-relaxed">
-              Git, Webpack, Babel, VS Code, Linux
+              Git, VS Code, Linux
             </p>
           </div>
           <div className="bg-gray-200 text-gray-800 p-8 rounded-lg shadow-lg w-full sm:w-1/2 md:w-1/3 lg:w-1/4 transition-transform transform-gpu hover:scale-105 hover:shadow-2xl">
