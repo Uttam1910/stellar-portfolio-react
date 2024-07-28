@@ -7,7 +7,7 @@ const Contact: React.FC = () => {
     email: '',
     message: '',
   });
-  const [isSending, setIsSending] = useState(false); // New state to track sending status
+  const [isSending, setIsSending] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -16,13 +16,12 @@ const Contact: React.FC = () => {
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSending(true); // Set sending status to true
+    setIsSending(true);
 
     const serviceID = 'service_buykzno';
     const templateID = 'template_abvk0hf';
-    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || ''; // Fetch from environment variables
+    const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || '';
 
-    // Initialize EmailJS with your public key
     // @ts-ignore
     emailjs.init(publicKey);
 
@@ -35,27 +34,27 @@ const Contact: React.FC = () => {
         from_email: formData.email,
         message: `Message: ${formData.message}\n\nEmail: ${formData.email}`,
       },
-      publicKey // Add your public key here
+      publicKey
     ).then((response: { status: number; text: string }) => {
       console.log('Mail sent successfully:', response.status, response.text);
       alert('Mail sent successfully');
-      setFormData({ name: '', email: '', message: '' }); // Clear the form fields
-      setIsSending(false); // Reset sending status
+      setFormData({ name: '', email: '', message: '' });
+      setIsSending(false);
     }).catch((error: { text: string }) => {
       console.error('Error sending email:', error);
       alert('Error sending email: ' + error.text);
-      setIsSending(false); // Reset sending status
+      setIsSending(false);
     });
   };
 
   return (
     <div className="container mx-auto p-4">
-      <main className="ml-64 p-4">
+      <main className="p-4 lg:ml-64">
         <section id="contact" className="bg-gray-100 p-8 rounded-lg shadow-lg">
           <h1 className="text-center text-3xl mb-6 text-gray-800">Contact</h1>
           <div className="text-center mb-6">
             <p className="text-gray-700">You can reach out to me via the following platforms:</p>
-            <div className="flex justify-center space-x-6 mt-4">
+            <div className="flex justify-center space-x-6 mt-4 flex-wrap">
               <a href="https://www.linkedin.com/in/uttam-thapa-1798a925a/" target="_blank" rel="noopener noreferrer" className="text-gray-800 hover:text-blue-600 flex items-center space-x-2">
                 <i className="fab fa-linkedin"></i> <span>LinkedIn</span>
               </a>
@@ -110,7 +109,7 @@ const Contact: React.FC = () => {
             <button
               type="submit"
               className="w-full py-3 bg-blue-600 text-white font-bold rounded-md hover:bg-blue-700"
-              disabled={isSending} // Disable the button while sending
+              disabled={isSending}
             >
               {isSending ? 'Sending...' : 'Send'}
             </button>
