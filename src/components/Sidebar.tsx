@@ -16,7 +16,7 @@ const Sidebar: React.FC = () => {
           <FaBars size={24} />
         </button>
       </div>
-      <aside className={`lg:w-64 bg-gray-800 text-white fixed h-full flex flex-col transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out`}>
+      <aside className={`lg:w-64 bg-gray-800 text-white fixed h-full flex flex-col transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out z-40`}>
         <div className="flex items-center justify-center p-4">
           <img src="/images/uttam.jpg" alt="Uttam" className="w-24 h-26 rounded-full border-4 border-teal-400" />
           <div className="ml-4">
@@ -45,6 +45,9 @@ const Sidebar: React.FC = () => {
           </a>
         </div>
       </aside>
+      {isOpen && (
+        <div onClick={toggleSidebar} className="fixed inset-0 bg-black opacity-50 z-30 lg:hidden"></div>
+      )}
     </>
   );
 };
