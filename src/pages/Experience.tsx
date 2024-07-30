@@ -46,7 +46,7 @@ const Experience: React.FC = () => {
           <h3 className="text-xl text-gray-500">Personal Project</h3>
           <p className="text-gray-600"><FaCalendarAlt className="inline-block mr-2" />July 2024 - August 2024</p>
           <p className="text-gray-600">Designed and developed a personal portfolio website using React and TypeScript to showcase my projects and skills. Implemented a card grid layout for the project section, allowing users to click and view project details without taking extra space. Ensured the website is fully responsive and works seamlessly across different devices.</p>
-          <p className="text-gray-600 mt-4"><strong>Technologies:</strong> React, TypeScript, CSS, HTML</p>
+          <p className="text-gray-600 mt-4"><strong>Technologies:</strong> React, TypeScript, Tailwind-CSS, HTML</p>
           <p className="text-gray-600 mt-4">
             <a href="https://github.com/Uttam1910/stellar-portfolio-react" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
               <FaGithub className="inline-block mr-2" />View on GitHub
