@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
             <li>Gained valuable experience in rapid development and teamwork under time constraints.</li>
           </ul>
           <p className="text-gray-600 mt-4">
-            <a href="URL_TO_CERTIFICATE" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
+            <a href="Certificates/hackathon/Recursion.png" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
               <FaLink className="inline-block mr-2" />View Certificate
             </a>
           </p>
@@ -48,7 +48,7 @@ const Experience: React.FC = () => {
           <p className="text-gray-600">Designed and developed a personal portfolio website using React and TypeScript to showcase my projects and skills. Implemented a card grid layout for the project section, allowing users to click and view project details without taking extra space. Ensured the website is fully responsive and works seamlessly across different devices.</p>
           <p className="text-gray-600 mt-4"><strong>Technologies:</strong> React, TypeScript, CSS, HTML</p>
           <p className="text-gray-600 mt-4">
-            <a href="URL_TO_GITHUB" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
+            <a href="https://github.com/Uttam1910/stellar-portfolio-react" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
               <FaGithub className="inline-block mr-2" />View on GitHub
             </a>
           </p>
@@ -67,7 +67,7 @@ const Experience: React.FC = () => {
           </ul>
           <p className="text-gray-600 mt-4"><strong>Technologies:</strong> React, Node.js, Express, MongoDB, CSS, HTML, Javascript</p>
           <p className="text-gray-600 mt-4">
-            <a href="URL_TO_GITHUB" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
+            <a href="https://github.com/Uttam1910/EduMaster" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
               <FaGithub className="inline-block mr-2" />View on GitHub
             </a>
           </p>
