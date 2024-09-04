@@ -26,7 +26,7 @@ const Education: React.FC = () => {
               High School Diploma
             </h2>
             <h3 className="text-xl font-medium mb-2">
-              V.K. Krishna Menon College of Commerce and Economics
+            V K Krishna Menon College
             </h3>
             <p className="text-gray-400"><i className="fas fa-calendar-alt"></i> August 2019 - May 2021</p>
             <p className="text-base leading-relaxed mt-2">
