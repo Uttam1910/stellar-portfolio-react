@@ -51,6 +51,12 @@ const Projects = () => {
       githubLink: 'https://github.com/Uttam1910/To-Do-List-App-with-Task-History',
       description: 'A To-Do List application that allows users to add, delete, and mark tasks as completed. The app also maintains a history of completed tasks, providing a comprehensive task management solution.'
     },
+    {
+      title: 'QuiztieProject',
+      thumbnail: '/images/quiz.jpg',
+      githubLink: 'https://github.com/Uttam1910/QuiztieProject',
+      description: 'A To-Do List application that allows users to add, delete, and mark tasks as completed. The app also maintains a history of completed tasks, providing a comprehensive task management solution.'
+    },
   ];
 
   return (
