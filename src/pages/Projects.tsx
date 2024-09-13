@@ -55,7 +55,7 @@ const Projects = () => {
       title: 'QuiztieProject',
       thumbnail: '/images/quiz.jpg',
       githubLink: 'https://github.com/Uttam1910/QuiztieProject',
-      description: 'A To-Do List application that allows users to add, delete, and mark tasks as completed. The app also maintains a history of completed tasks, providing a comprehensive task management solution.'
+      description: 'A Quiz App built with an intuitive and user-friendly interface, allowing users to take quizzes on various topics. Features include timed quizzes, multiple question types (MCQs, true/false), real-time scoring, and result tracking. It is designed with responsive layouts for seamless access across devices, and includes an admin panel for managing quiz content.'
     },
   ];
 
