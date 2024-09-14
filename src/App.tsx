@@ -8,6 +8,7 @@ import Projects from './pages/Projects';
 import Skills from './pages/Skills';
 import Education from './pages/Education';
 import Contact from './pages/Contact';
+import Certificates from './pages/Certificates';
 
 
 
@@ -24,6 +25,7 @@ function App() {
             <Route path="/experience" element={<Experience />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/skills" element={<Skills />} />
+            <Route path="/Certificates" element={<Certificates />} />
             <Route path="/education" element={<Education />} />
             <Route path="/contact" element={<Contact />} />
           </Routes>

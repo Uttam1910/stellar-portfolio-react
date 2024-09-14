@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaUser, FaBriefcase, FaProjectDiagram, FaCode, FaGraduationCap, FaEnvelope, FaFileAlt, FaLinkedin, FaGithub, FaBars } from 'react-icons/fa';
+import { FaHome, FaUser, FaBriefcase, FaProjectDiagram, FaCode, FaGraduationCap, FaEnvelope, FaFileAlt, FaLinkedin, FaGithub, FaBars, FaCertificate } from 'react-icons/fa';
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,6 +31,7 @@ const Sidebar: React.FC = () => {
             <li><Link to="/experience" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaBriefcase className="mr-3" /> Experience</Link></li>
             <li><Link to="/projects" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaProjectDiagram className="mr-3" /> Projects</Link></li>
             <li><Link to="/skills" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaCode className="mr-3" /> Skills</Link></li>
+            <li><Link to="/Certificates" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaCertificate className="mr-3" /> Certificates</Link></li>
             <li><Link to="/education" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaGraduationCap className="mr-3" /> Education</Link></li>
             <li><Link to="/contact" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaEnvelope className="mr-3" /> Contact</Link></li>
             <li><a href="pdf/uttam-resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaFileAlt className="mr-3" /> Resume</a></li>
