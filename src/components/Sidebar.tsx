@@ -34,7 +34,7 @@ const Sidebar: React.FC = () => {
             <li><Link to="/Certificates" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaCertificate className="mr-3" /> Certificates</Link></li>
             <li><Link to="/education" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaGraduationCap className="mr-3" /> Education</Link></li>
             <li><Link to="/contact" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaEnvelope className="mr-3" /> Contact</Link></li>
-            <li><a href="pdf/uttam-resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaFileAlt className="mr-3" /> Resume</a></li>
+            <li><a href="/pdf/uttam-resume.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}><FaFileAlt className="mr-3" /> Resume</a></li>
           </ul>
         </nav>
         <div className="p-4 flex justify-center space-x-4 bg-gray-900">
