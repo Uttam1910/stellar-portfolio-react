@@ -40,7 +40,7 @@ const certificateSections = [
         title: 'Ideathon',
         issuer: 'RGIT',
         date: 'Feb 2024',
-        file: '/Certificates/idea.png',
+        file: '/Certificates/Idea.png',
       },
     ],
   },

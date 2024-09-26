@@ -34,7 +34,7 @@ const Experience: React.FC = () => {
             <li>Gained valuable experience in rapid development and teamwork under time constraints.</li>
           </ul>
           <p className="text-gray-600 mt-4">
-            <a href="Certificates/hackathon/Recursion.png" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
+            <a href="Certificates/recursion.png" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
               <FaLink className="inline-block mr-2" />View Certificate
             </a>
           </p>
