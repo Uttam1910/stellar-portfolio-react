@@ -79,7 +79,7 @@ const certificateSections = [
         title: 'FOUNDATIONS OF STOCK TRADING',
         issuer: 'pwskills',
         date: 'June 2024',
-        file: '/Certificates/stock.pdf',
+        file: '/Certificates/Stock.pdf',
       },
     ],
   },
