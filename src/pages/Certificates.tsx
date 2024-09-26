@@ -33,7 +33,7 @@ const certificateSections = [
         title: 'Recursion',
         issuer: 'RGIT Codecell and Cess',
         date: 'March 2024',
-        file: '/Certificates/recursion.png',
+        file: '/Certificates/Recursion.png',
       },
 
       {
