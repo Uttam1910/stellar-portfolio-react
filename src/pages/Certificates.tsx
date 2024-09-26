@@ -10,14 +10,9 @@ const certificateSections = [
         title: 'Web Development Internship',
         issuer: 'Interpe',
         date: 'june 2024',
-        file: '/certificates/certificate6.pdf', // Public file path
+        file: '/Certificates/certificate6.pdf', 
       },
-      // {
-      //   title: 'Frontend Development with HTML, CSS, and JS',
-      //   issuer: 'Codecademy',
-      //   date: 'May 2023',
-      //   file: '/certificates/certificate4.png',
-      // },
+
     ],
   },
   {
@@ -27,7 +22,7 @@ const certificateSections = [
         title: 'Web development',
         issuer: 'Internpe',
         date: 'June 2024',
-        file: '/certificates/offer.png',
+        file: '/Certificates/offer.png',
       },
     ],
   },
@@ -38,28 +33,18 @@ const certificateSections = [
         title: 'Recursion',
         issuer: 'RGIT Codecell and Cess',
         date: 'March 2024',
-        file: '/certificates/recursion.png',
+        file: '/Certificates/recursion.png',
       },
 
       {
         title: 'Ideathon',
         issuer: 'RGIT',
         date: 'Feb 2024',
-        file: '/certificates/idea.png',
+        file: '/Certificates/idea.png',
       },
     ],
   },
-  // {
-  //   category: 'Workshops & Seminars',
-  //   certificates: [
-  //     {
-  //       title: 'Python for Data Science',
-  //       issuer: 'DataCamp',
-  //       date: 'April 2023',
-  //       file: '/certificates/certificate5.png',
-  //     },
-  //   ],
-  // },
+
   {
     category: 'Courses',
     certificates: [
@@ -67,35 +52,25 @@ const certificateSections = [
         title: 'FULL STACK WEB DEVELOPMENT',
         issuer: 'pwskills',
         date: '3rd July 2024',
-        file: '/certificates/webdev.pdf',
+        file: '/Certificates/webdev.pdf',
       },
 
       {
         title: 'BACKEND DEVELOPMENT COURSE',
         issuer: 'pwskills',
         date: '24 March 2024',
-        file: '/certificates/certificate1.pdf',
+        file: '/Certificates/certificate1.pdf',
       },
 
       {
         title: 'Google Cloud career readiness Associate Cloud Engineer track',
         issuer: 'Google Cloud',
         date: '8 April 2024',
-        file: '/certificates/certificate2.pdf',
+        file: '/Certificates/certificate2.pdf',
       },
     ],
   },
-  // {
-  //   category: 'Others',
-  //   certificates: [
-  //     {
-  //       title: 'Other Certificate Example',
-  //       issuer: 'Random Issuer',
-  //       date: 'January 2023',
-  //       file: '/certificates/certificate7.pdf',
-  //     },
-  //   ],
-  // },
+
 
   {
     category: 'Others',
@@ -104,7 +79,7 @@ const certificateSections = [
         title: 'FOUNDATIONS OF STOCK TRADING',
         issuer: 'pwskills',
         date: 'June 2024',
-        file: '/certificates/stock.pdf',
+        file: '/Certificates/stock.pdf',
       },
     ],
   },
