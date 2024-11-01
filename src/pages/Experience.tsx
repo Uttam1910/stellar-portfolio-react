@@ -25,6 +25,23 @@ const Experience: React.FC = () => {
         </div>
 
         <div className="experience-item mb-8">
+          <h2 className="text-2xl font-semibold text-gray-700">Software Developer Intern</h2>
+          <h3 className="text-xl text-gray-500">Prodigy InfoTech</h3>
+          <p className="text-gray-600"><FaCalendarAlt className="inline-block mr-2" />September 2024 - October 2024</p>
+          <p className="text-gray-600">Gained hands-on experience in software development by working on client projects. Improved system efficiency and functionality by collaborating with a team of developers and participating in code reviews.</p>
+          <ul className="list-disc list-inside text-gray-600 mt-4">
+            <li>Developed efficient algorithms to improve application performance.</li>
+            <li>Participated in code reviews and worked on bug fixes.</li>
+            <li>Collaborated with the team on project development and documentation.</li>
+          </ul>
+          <p className="text-gray-600 mt-4">
+            <a href="Certificates/prodigyinfotech.pdf" target="_blank" rel="noopener noreferrer" className="text-teal-600 hover:text-teal-800">
+              <FaLink className="inline-block mr-2" />View Certificate
+            </a>
+          </p>
+        </div>
+
+        <div className="experience-item mb-8">
           <h2 className="text-2xl font-semibold text-gray-700">Recursion Hackathon</h2>
           <h3 className="text-xl text-gray-500">Rajiv Gandhi College</h3>
           <p className="text-gray-600"><FaCalendarAlt className="inline-block mr-2" />24-hour Hackathon, Web Development + AI/ML</p>
