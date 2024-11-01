@@ -8,21 +8,32 @@ const certificateSections = [
     certificates: [
       {
         title: 'Web Development Internship',
-        issuer: 'Interpe',
-        date: 'june 2024',
+        issuer: 'Internpe',
+        date: 'June 2024',
         file: '/Certificates/certificate6.pdf', 
       },
-
+      {
+        title: 'Software Development Internship',
+        issuer: 'Prodigy InfoTech',
+        date: 'September 2024',
+        file: '/Certificates/prodigyinfotech.pdf', // Replace with actual file path
+      },
     ],
   },
   {
     category: 'Offer Letters',
     certificates: [
       {
-        title: 'Web development',
+        title: 'Web Development',
         issuer: 'Internpe',
         date: 'June 2024',
         file: '/Certificates/offer.png',
+      },
+      {
+        title: 'Software Development Offer Letter',
+        issuer: 'Prodigy InfoTech',
+        date: 'September 2024',
+        file: '/Certificates/Prodigy.pdf', // Replace with actual file path
       },
     ],
   },
@@ -35,7 +46,6 @@ const certificateSections = [
         date: 'March 2024',
         file: '/Certificates/Recursion.png',
       },
-
       {
         title: 'Ideathon',
         issuer: 'RGIT',
@@ -44,7 +54,6 @@ const certificateSections = [
       },
     ],
   },
-
   {
     category: 'Courses',
     certificates: [
@@ -54,14 +63,12 @@ const certificateSections = [
         date: '3rd July 2024',
         file: '/Certificates/webdev.pdf',
       },
-
       {
         title: 'BACKEND DEVELOPMENT COURSE',
         issuer: 'pwskills',
         date: '24 March 2024',
         file: '/Certificates/certificate1.pdf',
       },
-
       {
         title: 'Google Cloud career readiness Associate Cloud Engineer track',
         issuer: 'Google Cloud',
@@ -70,8 +77,6 @@ const certificateSections = [
       },
     ],
   },
-
-
   {
     category: 'Others',
     certificates: [
