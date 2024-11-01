@@ -33,7 +33,7 @@ const certificateSections = [
         title: 'Software Development Offer Letter',
         issuer: 'Prodigy InfoTech',
         date: 'September 2024',
-        file: '/Certificates/Prodigy.pdf', // Replace with actual file path
+        file: '/Certificates/prodigy.pdf', // Replace with actual file path
       },
     ],
   },
