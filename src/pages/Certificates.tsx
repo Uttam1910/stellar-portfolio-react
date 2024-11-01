@@ -88,6 +88,18 @@ const certificateSections = [
       },
     ],
   },
+  // New section for Letters of Recommendation
+  {
+    category: 'Letters of Recommendation',
+    certificates: [
+      {
+        title: 'Letter of Recommendation from ProdigyInfoTech',
+        issuer: 'ProdigyInfoTech',
+        date: 'Oct 2024',
+        file: '/Certificates/LOR.pdf', // Replace with actual file path
+      },
+    ],
+  },
 ];
 
 const Certificates: React.FC = () => {
