@@ -74,7 +74,7 @@ const Sidebar: React.FC = () => {
               </Link>
             </li>
             <li>
-              <a href="/pdf/cvuttamsthapa.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}>
+              <a href="/pdf/Uttam_py.pdf" target="_blank" rel="noopener noreferrer" className="flex items-center p-4 hover:bg-teal-700" onClick={toggleSidebar}>
                 <FaFileAlt className="mr-3" /> Resume
               </a>
             </li>
