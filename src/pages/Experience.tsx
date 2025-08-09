@@ -1,5 +1,14 @@
 import React from 'react';
-import { FaCalendarAlt, FaLink, FaGithub } from 'react-icons/fa';
+import {
+  FaCalendarAlt as FaCalendarAltIcon,
+  FaLink as FaLinkIcon,
+  FaGithub as FaGithubIcon
+} from 'react-icons/fa';
+
+// ✅ TypeScript-safe casts for react-icons
+const FaCalendarAlt = FaCalendarAltIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
+const FaLink = FaLinkIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
+const FaGithub = FaGithubIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 const Experience: React.FC = () => {
   return (

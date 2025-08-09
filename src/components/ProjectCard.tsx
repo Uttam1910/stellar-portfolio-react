@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
-import { FaGithub } from 'react-icons/fa';
+import { FaGithub as FaGithubIcon } from 'react-icons/fa';
+
+// ✅ TypeScript-safe casting for react-icons
+const FaGithub = FaGithubIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 interface ProjectCardProps {
   title: string;

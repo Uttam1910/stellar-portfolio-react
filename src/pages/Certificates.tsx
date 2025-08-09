@@ -1,5 +1,9 @@
 import React from 'react';
-import { FaDownload, FaExternalLinkAlt } from 'react-icons/fa';
+import { FaDownload as FaDownloadIcon, FaExternalLinkAlt as FaExternalLinkAltIcon } from 'react-icons/fa';
+
+// ✅ Fix icon typing for TypeScript
+const FaDownload = FaDownloadIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
+const FaExternalLinkAlt = FaExternalLinkAltIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 // Array of certificate sections
 const certificateSections = [
@@ -16,7 +20,7 @@ const certificateSections = [
         title: 'Software Development Internship',
         issuer: 'Prodigy InfoTech',
         date: 'September 2024',
-        file: '/Certificates/prodigyinfotech.pdf', // Replace with actual file path
+        file: '/Certificates/prodigyinfotech.pdf',
       },
     ],
   },
@@ -33,7 +37,7 @@ const certificateSections = [
         title: 'Software Development Offer Letter',
         issuer: 'Prodigy InfoTech',
         date: 'September 2024',
-        file: '/Certificates/prodigy.pdf', // Replace with actual file path
+        file: '/Certificates/prodigy.pdf',
       },
     ],
   },
@@ -88,7 +92,6 @@ const certificateSections = [
       },
     ],
   },
-  // New section for Letters of Recommendation
   {
     category: 'Letters of Recommendation',
     certificates: [
@@ -96,7 +99,7 @@ const certificateSections = [
         title: 'Letter of Recommendation from ProdigyInfoTech',
         issuer: 'ProdigyInfoTech',
         date: 'Oct 2024',
-        file: '/Certificates/LOR.pdf', // Replace with actual file path
+        file: '/Certificates/LOR.pdf',
       },
     ],
   },

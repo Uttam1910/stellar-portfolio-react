@@ -1,6 +1,35 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FaHome, FaUser, FaBriefcase, FaProjectDiagram, FaCode, FaGraduationCap, FaEnvelope, FaFileAlt, FaLinkedin, FaGithub, FaBars, FaCertificate } from 'react-icons/fa';
+
+// Import icons with aliases
+import { 
+  FaBars as FaBarsOriginal,
+  FaHome as FaHomeOriginal,
+  FaUser as FaUserOriginal,
+  FaBriefcase as FaBriefcaseOriginal,
+  FaProjectDiagram as FaProjectDiagramOriginal,
+  FaCode as FaCodeOriginal,
+  FaGraduationCap as FaGraduationCapOriginal,
+  FaEnvelope as FaEnvelopeOriginal,
+  FaFileAlt as FaFileAltOriginal,
+  FaLinkedin as FaLinkedinOriginal,
+  FaGithub as FaGithubOriginal,
+  FaCertificate as FaCertificateOriginal
+} from 'react-icons/fa';
+
+// Cast icons to React ComponentType
+const FaBars = FaBarsOriginal as React.ComponentType<any>;
+const FaHome = FaHomeOriginal as React.ComponentType<any>;
+const FaUser = FaUserOriginal as React.ComponentType<any>;
+const FaBriefcase = FaBriefcaseOriginal as React.ComponentType<any>;
+const FaProjectDiagram = FaProjectDiagramOriginal as React.ComponentType<any>;
+const FaCode = FaCodeOriginal as React.ComponentType<any>;
+const FaGraduationCap = FaGraduationCapOriginal as React.ComponentType<any>;
+const FaEnvelope = FaEnvelopeOriginal as React.ComponentType<any>;
+const FaFileAlt = FaFileAltOriginal as React.ComponentType<any>;
+const FaLinkedin = FaLinkedinOriginal as React.ComponentType<any>;
+const FaGithub = FaGithubOriginal as React.ComponentType<any>;
+const FaCertificate = FaCertificateOriginal as React.ComponentType<any>;
 
 const Sidebar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
