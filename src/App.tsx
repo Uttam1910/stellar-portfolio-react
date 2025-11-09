@@ -16,9 +16,10 @@ import Certificates from './pages/Certificates';
 function App() {
   return (
     <Router>
-      <div className="flex">
+      <div className="flex min-h-screen bg-gray-900">
         <Sidebar />
-        <div className="flex-1">
+        {/* Main content area - accounts for fixed sidebar on large screens */}
+        <div className="flex-1 lg:ml-64 min-h-screen">
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />

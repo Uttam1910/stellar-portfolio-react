@@ -60,22 +60,50 @@ const Projects = () => {
   ];
 
   return (
-    <main className="flex-1 container mx-auto px-4 py-8 transition-all duration-300">
-      <section
-        id="projects"
-        className="bg-white shadow-md rounded-lg p-6 lg:ml-64 mx-4"
-      >
-        <h1 className="text-3xl font-bold text-gray-800 mb-6">Projects</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <ProjectCard
-              key={index}
-              title={project.title}
-              thumbnail={project.thumbnail}
-              githubLink={project.githubLink}
-              description={project.description}
-            />
-          ))}
+    <main className="flex-1 min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse-delayed"></div>
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+
+      {/* Main content - centered */}
+      <section className="relative z-10 flex flex-col items-center min-h-screen px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="w-full max-w-7xl mx-auto space-y-8">
+          {/* Header */}
+          <div className="text-center space-y-4 animate-fade-in">
+            <p className="text-teal-400 font-mono text-sm sm:text-base opacity-70">
+              <span className="text-gray-500">&lt;</span>projects
+              <span className="text-gray-500">/&gt;</span>
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
+              My <span className="text-teal-400">Projects</span>
+            </h1>
+            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+              A collection of projects showcasing my skills and experience in web development
+            </p>
+          </div>
+
+          {/* Projects Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {projects.map((project, index) => (
+              <div
+                key={index}
+                className="animate-fade-in-delay"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                <ProjectCard
+                  title={project.title}
+                  thumbnail={project.thumbnail}
+                  githubLink={project.githubLink}
+                  description={project.description}
+                />
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>

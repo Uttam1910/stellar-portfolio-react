@@ -2,51 +2,98 @@ import React from "react";
 
 const About: React.FC = () => {
   return (
-    <main className="flex-1 flex flex-col items-center justify-center min-h-screen p-4 sm:p-10 bg-gray-100">
-      <section
-        id="about"
-        className="about-content bg-white p-6 sm:p-8 rounded-lg shadow-lg w-full max-w-full lg:max-w-2xl xl:max-w-4xl text-center lg:ml-32 xl:ml-64" // Adjusted margins
-      >
-        <h1 className="text-3xl sm:text-4xl mb-4 sm:mb-6 text-primary">About Me</h1>
-        <p className="text-base sm:text-lg mb-4 sm:mb-6 text-secondary">
-          Hi, I'm Uttam. I'm a final-year student pursuing a Bachelor's in
-          Computer Science and Engineering with a specialization in AI and ML.
-          As an enthusiastic and competitive student, I am eager to contribute
-          to team success through hard work, attention to detail, and excellent
-          organizational skills.
-        </p>
-        <p className="text-base sm:text-lg mb-4 sm:mb-6 text-secondary">
-          My strengths lie in Machine Learning, Web Development, and Database
-          Management. I have a solid understanding of C, C++, and Python, and I
-          excel in developing innovative solutions in both experimental and
-          practical coding environments. My expertise includes:
-        </p>
-        <h2 className="text-2xl sm:text-3xl mb-4 sm:mb-6 text-primary">Technical Skills</h2>
-        <div className="skills flex flex-wrap justify-center gap-2 sm:gap-4 mb-4 sm:mb-6">
-          <div className="skill bg-primary text-white py-1 sm:py-2 px-3 sm:px-4 rounded-full flex items-center text-sm sm:text-base">
-            <i className="fas fa-code mr-2"></i>
-            <span>Languages: Python, JavaScript, Java, C/C++, HTML/CSS, PHP, SQL</span>
+    <main className="flex-1 min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white relative overflow-hidden">
+      {/* Animated background elements */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-teal-500/5 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute bottom-1/4 left-1/4 w-96 h-96 bg-cyan-500/5 rounded-full blur-3xl animate-pulse-delayed"></div>
+      </div>
+
+      {/* Grid pattern overlay */}
+      <div className="absolute inset-0 bg-[linear-gradient(to_right,#ffffff08_1px,transparent_1px),linear-gradient(to_bottom,#ffffff08_1px,transparent_1px)] bg-[size:32px_32px] pointer-events-none"></div>
+
+      {/* Main content - centered */}
+      <section className="relative z-10 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 py-12 lg:py-20">
+        <div className="w-full max-w-4xl mx-auto space-y-8 animate-fade-in">
+          {/* Header */}
+          <div className="text-center space-y-4">
+            <p className="text-teal-400 font-mono text-sm sm:text-base opacity-70">
+              <span className="text-gray-500">&lt;</span>about
+              <span className="text-gray-500">/&gt;</span>
+            </p>
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white">
+              About <span className="text-teal-400">Me</span>
+            </h1>
           </div>
-          <div className="skill bg-primary text-white py-1 sm:py-2 px-3 sm:px-4 rounded-full flex items-center text-sm sm:text-base">
-            <i className="fas fa-database mr-2"></i>
-            <span>Databases: MySQL, Cloud, MongoDB</span>
+
+          {/* Content */}
+          <div className="space-y-6 text-gray-300 leading-relaxed">
+            <p className="text-lg sm:text-xl">
+              Hi, I'm Uttam. I'm a final-year student pursuing a Bachelor's in
+              Computer Science and Engineering with a specialization in AI and ML.
+              As an enthusiastic and competitive student, I am eager to contribute
+              to team success through hard work, attention to detail, and excellent
+              organizational skills.
+            </p>
+            <p className="text-lg sm:text-xl">
+              My strengths lie in Machine Learning, Web Development, and Database
+              Management. I have a solid understanding of C, C++, and Python, and I
+              excel in developing innovative solutions in both experimental and
+              practical coding environments.
+            </p>
           </div>
-          <div className="skill bg-primary text-white py-1 sm:py-2 px-3 sm:px-4 rounded-full flex items-center text-sm sm:text-base">
-            <i className="fas fa-cube mr-2"></i>
-            <span>Libraries: NumPy, Pandas, OpenCV</span>
+
+          {/* Technical Skills Section */}
+          <div className="space-y-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-center text-white">
+              Technical <span className="text-teal-400">Skills</span>
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-4 hover:border-teal-500/40 transition-all duration-300">
+                <div className="flex items-center mb-2">
+                  <i className="fas fa-code text-teal-400 mr-3 text-xl"></i>
+                  <h3 className="text-teal-400 font-semibold text-lg">Languages</h3>
+                </div>
+                <p className="text-gray-300">Python, JavaScript, Java, C/C++, HTML/CSS, PHP, SQL</p>
+              </div>
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-4 hover:border-teal-500/40 transition-all duration-300">
+                <div className="flex items-center mb-2">
+                  <i className="fas fa-database text-teal-400 mr-3 text-xl"></i>
+                  <h3 className="text-teal-400 font-semibold text-lg">Databases</h3>
+                </div>
+                <p className="text-gray-300">MySQL, Cloud, MongoDB</p>
+              </div>
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-4 hover:border-teal-500/40 transition-all duration-300">
+                <div className="flex items-center mb-2">
+                  <i className="fas fa-cube text-teal-400 mr-3 text-xl"></i>
+                  <h3 className="text-teal-400 font-semibold text-lg">Libraries</h3>
+                </div>
+                <p className="text-gray-300">NumPy, Pandas, OpenCV</p>
+              </div>
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-4 hover:border-teal-500/40 transition-all duration-300">
+                <div className="flex items-center mb-2">
+                  <i className="fas fa-cogs text-teal-400 mr-3 text-xl"></i>
+                  <h3 className="text-teal-400 font-semibold text-lg">Frameworks</h3>
+                </div>
+                <p className="text-gray-300">Express.js, React, Node.js, Tailwind CSS, Bootstrap</p>
+              </div>
+              <div className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-4 hover:border-teal-500/40 transition-all duration-300 md:col-span-2">
+                <div className="flex items-center mb-2">
+                  <i className="fas fa-tools text-teal-400 mr-3 text-xl"></i>
+                  <h3 className="text-teal-400 font-semibold text-lg">Tools & Technologies</h3>
+                </div>
+                <p className="text-gray-300">Git, Docker, AWS</p>
+              </div>
+            </div>
           </div>
-          <div className="skill bg-primary text-white py-1 sm:py-2 px-3 sm:px-4 rounded-full flex items-center text-sm sm:text-base">
-            <i className="fas fa-cogs mr-2"></i>
-            <span>Frameworks: Express.js, React, Node.js, Tailwind CSS, Bootstrap</span>
-          </div>
-          <div className="skill bg-primary text-white py-1 sm:py-2 px-3 sm:px-4 rounded-full flex items-center text-sm sm:text-base">
-            <i className="fas fa-tools mr-2"></i>
-            <span>Tools & Technologies: Git, Docker, AWS</span>
+
+          {/* Closing paragraph */}
+          <div className="text-center">
+            <p className="text-lg sm:text-xl text-gray-300 leading-relaxed max-w-3xl mx-auto">
+              I am passionate about exploring new technologies and continually improving my skills to solve complex and significant real-world problems. I am seeking an opportunity to work in a position that combines my skills in Software Engineering, offers professional development, provides interesting experiences, and fosters personal growth.
+            </p>
           </div>
         </div>
-        <p className="text-base sm:text-lg text-secondary">
-          I am passionate about exploring new technologies and continually improving my skills to solve complex and significant real-world problems. I am seeking an opportunity to work in a position that combines my skills in Software Engineering, offers professional development, provides interesting experiences, and fosters personal growth.
-        </p>
       </section>
     </main>
   );
