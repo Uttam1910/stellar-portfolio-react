@@ -15,6 +15,21 @@ const FaBriefcase = FaBriefcaseIcon as React.ComponentType<React.SVGProps<SVGSVG
 const Experience: React.FC = () => {
   const experiences = [
     {
+      title: 'Software Developer / Full Stack Developer',
+      company: 'Growve',
+      period: 'september 2025 - Present',
+      description: 'Working as a Full Stack Developer, developing and maintaining web applications using modern technologies. Collaborating with cross-functional teams to deliver high-quality software solutions.',
+      responsibilities: [
+        'Develop and maintain full-stack web applications using React, Node.js, and modern frameworks.',
+        'Design and implement RESTful APIs and database schemas.',
+        'Collaborate with team members on code reviews and best practices.',
+        'Participate in agile development processes and sprint planning.',
+        'Write clean, maintainable, and scalable code.'
+      ],
+      technologies: 'Next js, Tailwind css, React, Node.js, JavaScript, TypeScript, Express.js, MongoDB, SQL, Git',
+      type: 'full-time'
+    },
+    {
       title: 'Web Developer Intern',
       company: 'Internpe',
       period: 'June 2024 - July 2024',

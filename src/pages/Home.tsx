@@ -10,10 +10,10 @@ const BsGithub = BsGithubIcon as React.ComponentType<React.SVGProps<SVGSVGElemen
 const Home: React.FC = React.memo(() => {
   const typedStrings = useMemo(
     () => [
-      'A Web Developer.',
+      'A Full Stack Developer.',
       'A Software Developer.',
+      'A Web Developer.',
       'A Pythonist.',
-      'An Engineering Student.',
     ],
     []
   );

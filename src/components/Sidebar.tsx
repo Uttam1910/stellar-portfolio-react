@@ -65,7 +65,7 @@ const Sidebar: React.FC = () => {
           className="text-white bg-teal-500 hover:bg-teal-600 p-3 rounded-lg shadow-lg transition-all duration-300 transform hover:scale-110"
           aria-label="Toggle menu"
         >
-          <FaBars size={20} />
+          <FaBars className="w-5 h-5" />
         </button>
       </div>
 
@@ -79,7 +79,7 @@ const Sidebar: React.FC = () => {
             className="text-gray-400 hover:text-white transition-colors"
             aria-label="Close menu"
           >
-            <FaTimes size={24} />
+            <FaTimes className="w-6 h-6" />
           </button>
         </div>
 
@@ -94,7 +94,7 @@ const Sidebar: React.FC = () => {
             <div className="absolute bottom-0 right-0 w-4 h-4 bg-teal-400 rounded-full border-2 border-gray-900"></div>
           </div>
           <h2 className="text-xl font-bold text-white mb-1">Uttam</h2>
-          <p className="text-sm text-gray-400 text-center">Computer Science Student</p>
+          <p className="text-sm text-gray-400 text-center">Full Stack Developer</p>
         </div>
         
         {/* Navigation links */}
@@ -145,7 +145,7 @@ const Sidebar: React.FC = () => {
               className="w-10 h-10 flex items-center justify-center rounded-full bg-teal-500/20 text-teal-400 hover:bg-teal-500 hover:text-white transition-all duration-300 transform hover:scale-110"
               aria-label="LinkedIn"
             >
-              <FaLinkedin size={18} />
+              <FaLinkedin className="w-5 h-5" />
             </a>
             <a 
               href="https://github.com/uttam1910" 
@@ -154,7 +154,7 @@ const Sidebar: React.FC = () => {
               className="w-10 h-10 flex items-center justify-center rounded-full bg-teal-500/20 text-teal-400 hover:bg-teal-500 hover:text-white transition-all duration-300 transform hover:scale-110"
               aria-label="GitHub"
             >
-              <FaGithub size={18} />
+              <FaGithub className="w-5 h-5" />
             </a>
           </div>
         </div>

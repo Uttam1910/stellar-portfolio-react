@@ -29,17 +29,17 @@ const About: React.FC = () => {
           {/* Content */}
           <div className="space-y-6 text-gray-300 leading-relaxed">
             <p className="text-lg sm:text-xl">
-              Hi, I'm Uttam. I'm a final-year student pursuing a Bachelor's in
-              Computer Science and Engineering with a specialization in AI and ML.
-              As an enthusiastic and competitive student, I am eager to contribute
-              to team success through hard work, attention to detail, and excellent
-              organizational skills.
+              Hi, I'm Uttam. I'm a Full Stack Developer currently working at Growve,
+              where I develop and maintain web applications using modern technologies.
+              With a background in Computer Science and Engineering with a specialization in AI and ML,
+              I bring a unique perspective to software development, combining theoretical knowledge
+              with practical experience.
             </p>
             <p className="text-lg sm:text-xl">
-              My strengths lie in Machine Learning, Web Development, and Database
-              Management. I have a solid understanding of C, C++, and Python, and I
-              excel in developing innovative solutions in both experimental and
-              practical coding environments.
+              My strengths lie in Full Stack Development, Machine Learning, Web Development, and Database
+              Management. I have a solid understanding of modern technologies including React, Node.js,
+              Python, and various databases. I excel in developing innovative solutions and delivering
+              high-quality software products.
             </p>
           </div>
 
