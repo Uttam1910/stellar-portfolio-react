@@ -120,13 +120,20 @@ const Experience: React.FC = () => {
           </div>
 
           {/* Experience Timeline */}
-          <div className="space-y-6">
+          <div className="space-y-6 relative">
+            {/* Timeline line */}
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-500 to-cyan-500 opacity-30 hidden md:block ml-6"></div>
+
             {experiences.map((exp, index) => (
               <div
                 key={index}
-                className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 hover:border-teal-500/40 transition-all duration-300 animate-fade-in-delay"
+                className="md:ml-16 bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 hover:border-teal-500/40 transition-all duration-300 transform hover:scale-102 hover:shadow-xl hover:shadow-teal-500/10 animate-fade-in-delay group relative"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* Timeline dot */}
+                <div className="absolute -left-8 top-8 hidden md:block">
+                  <div className="w-4 h-4 bg-teal-500 rounded-full border-4 border-gray-900 shadow-lg group-hover:shadow-glow transition-all duration-300"></div>
+                </div>
                 <div className="flex items-start justify-between flex-wrap gap-4 mb-4">
                   <div className="flex-1">
                     <div className="flex items-center gap-3 mb-2">
@@ -141,12 +148,15 @@ const Experience: React.FC = () => {
                   </div>
                 </div>
                 
-                <p className="text-gray-300 mb-4 leading-relaxed">{exp.description}</p>
+                <p className="text-gray-300 mb-4 leading-relaxed hover:text-gray-200 transition-colors duration-300">{exp.description}</p>
                 
                 {exp.responsibilities && (
-                  <ul className="list-disc list-inside text-gray-300 space-y-2 mb-4 ml-2">
+                  <ul className="space-y-2 mb-4">
                     {exp.responsibilities.map((resp, idx) => (
-                      <li key={idx}>{resp}</li>
+                      <li key={idx} className="text-gray-300 flex items-start hover:text-gray-200 transition-colors duration-300">
+                        <span className="text-teal-400 mr-3 flex-shrink-0 mt-1">✓</span>
+                        <span>{resp}</span>
+                      </li>
                     ))}
                   </ul>
                 )}

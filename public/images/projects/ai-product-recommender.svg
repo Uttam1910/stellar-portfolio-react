@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#a78bfa" />
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="720" fill="#001219" />
+  <circle cx="150" cy="560" r="220" fill="#0891b2" opacity="0.08" />
+  <circle cx="1040" cy="140" r="180" fill="#7c3aed" opacity="0.08" />
+  <g transform="translate(80,160)">
+    <rect x="0" y="0" width="1040" height="400" rx="22" fill="#041024" stroke="#06b6d4" stroke-opacity="0.06" />
+    <text x="520" y="160" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="44" fill="#e6fffa" font-weight="700">AI Product Recommender</text>
+    <text x="520" y="220" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#c7f9cc">Personalized product suggestions • Behavior-driven • Clean UI</text>
+  </g>
+</svg>

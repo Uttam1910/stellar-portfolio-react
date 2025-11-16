@@ -1,32 +1,36 @@
 import React from 'react';
-import { FaCalendarAlt as FaCalendarAltIcon, FaGraduationCap as FaGraduationCapIcon } from 'react-icons/fa';
+import { FaCalendarAlt as FaCalendarAltIcon, FaGraduationCap as FaGraduationCapIcon, FaTrophy as FaTrophyIcon } from 'react-icons/fa';
 
 // ✅ TypeScript-safe casts for react-icons
 const FaCalendarAlt = FaCalendarAltIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const FaGraduationCap = FaGraduationCapIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
+const FaTrophy = FaTrophyIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 const Education: React.FC = () => {
   const education = [
     {
       degree: 'Bachelor of Technology in Computer Science',
       institution: 'Mumbai University - MCT\'s Rajiv Gandhi Institute of Technology, Mumbai',
-      period: 'December 2021 - June 2025',
+      period: 'December 2021 - June 2025 (Completed)',
       details: 'Relevant coursework: Data Structures and Algorithms, Machine Learning, Web Development, Database Systems, Operating Systems.',
-      achievement: 'CGPA: 9.62 (up to the third year)'
+      achievement: 'CGPA: 9.56 (average across all 4 years) — Degree completed',
+      color: 'from-cyan-500 to-teal-500'
     },
     {
       degree: 'High School Diploma',
       institution: 'V K Krishna Menon College',
       period: 'August 2019 - May 2021',
       details: 'Graduated with honors, focusing on mathematics and computer science.',
-      achievement: '12th Grade Percentage: 91%'
+      achievement: '12th Grade Percentage: 91%',
+      color: 'from-teal-500 to-cyan-500'
     },
     {
       degree: 'Secondary School Certificate',
       institution: 'S.V.B\'S OXFORD HIGH SCHOOL',
       period: 'May 2019',
       details: '',
-      achievement: '10th Grade Percentage: 87%'
+      achievement: '10th Grade Percentage: 87%',
+      color: 'from-cyan-500 to-teal-500'
     }
   ];
 
@@ -59,28 +63,39 @@ const Education: React.FC = () => {
           </div>
 
           {/* Education Timeline */}
-          <div className="space-y-6">
+          <div className="space-y-6 relative">
+            {/* Timeline line */}
+            <div className="absolute left-0 top-0 bottom-0 w-1 bg-gradient-to-b from-teal-500 to-cyan-500 opacity-30 hidden md:block ml-6"></div>
+
             {education.map((edu, index) => (
               <div
                 key={index}
-                className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 hover:border-teal-500/40 transition-all duration-300 animate-fade-in-delay"
+                className="md:ml-16 bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 hover:border-teal-500/40 transition-all duration-300 transform hover:scale-102 hover:shadow-xl hover:shadow-teal-500/10 animate-fade-in-delay group relative"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
+                {/* Timeline dot */}
+                <div className="absolute -left-8 top-8 hidden md:block">
+                  <div className={`w-4 h-4 bg-gradient-to-r ${edu.color} rounded-full border-4 border-gray-900 shadow-lg group-hover:shadow-glow transition-all duration-300`}></div>
+                </div>
+
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="flex-shrink-0 w-12 h-12 bg-teal-500/20 rounded-full flex items-center justify-center">
-                    <FaGraduationCap className="text-teal-400 text-xl" />
+                  <div className={`flex-shrink-0 w-12 h-12 bg-gradient-to-br ${edu.color} rounded-full flex items-center justify-center shadow-lg group-hover:shadow-glow transition-all duration-300 transform group-hover:scale-110`}>
+                    <FaGraduationCap className="text-white text-xl" />
                   </div>
                   <div className="flex-1">
-                    <h2 className="text-2xl font-bold text-white mb-2">{edu.degree}</h2>
+                    <h2 className="text-2xl font-bold text-white mb-2 group-hover:text-teal-400 transition-colors duration-300">{edu.degree}</h2>
                     <h3 className="text-xl text-teal-400 font-semibold mb-3">{edu.institution}</h3>
-                    <div className="flex items-center text-gray-400 text-sm mb-3">
+                    <div className="flex items-center text-gray-400 text-sm mb-3 group-hover:text-gray-300 transition-colors duration-300">
                       <FaCalendarAlt className="mr-2" />
                       <span>{edu.period}</span>
                     </div>
                     {edu.details && (
-                      <p className="text-gray-300 leading-relaxed mb-3">{edu.details}</p>
+                      <p className="text-gray-300 leading-relaxed mb-3 group-hover:text-gray-200 transition-colors duration-300">{edu.details}</p>
                     )}
-                    <p className="text-teal-400 font-semibold">{edu.achievement}</p>
+                    <div className="flex items-center text-teal-400 font-semibold gap-2 group-hover:text-cyan-400 transition-colors duration-300">
+                      <FaTrophy className="w-4 h-4" />
+                      <span>{edu.achievement}</span>
+                    </div>
                   </div>
                 </div>
               </div>

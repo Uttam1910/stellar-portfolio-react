@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#041022" />
+  <defs>
+    <linearGradient id="g4" x1="0" x2="1">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#60a5fa" />
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="540" r="220" fill="#60a5fa" opacity="0.06" />
+  <circle cx="980" cy="160" r="180" fill="#06b6d4" opacity="0.06" />
+  <g transform="translate(80,160)">
+    <rect x="0" y="0" width="1040" height="400" rx="22" fill="#06122a" stroke="#60a5fa" stroke-opacity="0.06" />
+    <text x="520" y="160" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="44" fill="#e6fffa" font-weight="700">Weather Agent Chat</text>
+    <text x="520" y="220" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#bfe1ff">Conversational weather assistant • Forecasts • Alerts • Travel summaries</text>
+  </g>
+</svg>

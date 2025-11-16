@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <defs>
+    <linearGradient id="g1" x1="0" x2="1">
+      <stop offset="0%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#0ea5a4" />
+    </linearGradient>
+    <filter id="f1" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="20" result="b" />
+      <feBlend in="SourceGraphic" in2="b" mode="normal" />
+    </filter>
+  </defs>
+  <rect width="1200" height="720" fill="#0f172a" />
+  <g filter="url(#f1)">
+    <circle cx="220" cy="180" r="220" fill="url(#g1)" opacity="0.15" />
+    <circle cx="980" cy="520" r="200" fill="#7c3aed" opacity="0.12" />
+  </g>
+  <g transform="translate(80,160)">
+    <rect x="0" y="0" width="1040" height="400" rx="22" fill="#071024" stroke="#0ea5a4" stroke-opacity="0.08" />
+    <text x="520" y="160" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="44" fill="#e6fffa" font-weight="700">AI Travel Planner</text>
+    <text x="520" y="220" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="20" fill="#9ae6b4">Itinerary suggestions • Route optimization • Personalized recommendations</text>
+  </g>
+</svg>

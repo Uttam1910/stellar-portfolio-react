@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { FaDownload as FaDownloadIcon, FaExternalLinkAlt as FaExternalLinkAltIcon, FaCertificate as FaCertificateIcon } from 'react-icons/fa';
 
 // ✅ Fix icon typing for TypeScript
@@ -10,6 +10,7 @@ const FaCertificate = FaCertificateIcon as React.ComponentType<React.SVGProps<SV
 const certificateSections = [
   {
     category: 'Internships Certificates',
+    color: 'from-cyan-500 to-teal-500',
     certificates: [
       {
         title: 'Web Development Internship',
@@ -27,6 +28,7 @@ const certificateSections = [
   },
   {
     category: 'Offer Letters',
+    color: 'from-teal-500 to-cyan-500',
     certificates: [
       {
         title: 'Web Development',
@@ -44,6 +46,7 @@ const certificateSections = [
   },
   {
     category: 'Hackathon Certificates',
+    color: 'from-cyan-500 to-teal-500',
     certificates: [
       {
         title: 'Recursion',
@@ -61,6 +64,7 @@ const certificateSections = [
   },
   {
     category: 'Courses',
+    color: 'from-teal-500 to-cyan-500',
     certificates: [
       {
         title: 'FULL STACK WEB DEVELOPMENT',
@@ -84,6 +88,7 @@ const certificateSections = [
   },
   {
     category: 'Others',
+    color: 'from-cyan-500 to-teal-500',
     certificates: [
       {
         title: 'FOUNDATIONS OF STOCK TRADING',
@@ -95,6 +100,7 @@ const certificateSections = [
   },
   {
     category: 'Letters of Recommendation',
+    color: 'from-teal-500 to-cyan-500',
     certificates: [
       {
         title: 'Letter of Recommendation from ProdigyInfoTech',
@@ -107,6 +113,12 @@ const certificateSections = [
 ];
 
 const Certificates: React.FC = () => {
+  const [expandedCategory, setExpandedCategory] = useState<string | null>(null);
+
+  const toggleCategory = (category: string) => {
+    setExpandedCategory(expandedCategory === category ? null : category);
+  };
+
   return (
     <main className="flex-1 min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white relative overflow-hidden">
       {/* Animated background elements */}
@@ -135,52 +147,73 @@ const Certificates: React.FC = () => {
             </p>
           </div>
 
-          {/* Certificate Sections */}
-          <div className="space-y-8">
+          {/* Certificate Sections - Collapsible */}
+          <div className="space-y-4">
             {certificateSections.map((section, sectionIndex) => (
-              <div key={sectionIndex} className="animate-fade-in-delay" style={{ animationDelay: `${sectionIndex * 0.1}s` }}>
-                <div className="flex items-center gap-3 mb-6">
-                  <FaCertificate className="text-teal-400 text-2xl" />
-                  <h2 className="text-3xl font-bold text-white border-b-2 border-teal-500/50 pb-2">
-                    {section.category}
-                  </h2>
-                </div>
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-                  {section.certificates.map((certificate, index) => (
-                    <div
-                      key={index}
-                      className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 hover:border-teal-500/40 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 transform hover:scale-105"
-                    >
-                      <h3 className="text-lg font-bold text-white mb-2">{certificate.title}</h3>
-                      <p className="text-teal-400 font-semibold mb-2">{certificate.issuer}</p>
-                      <p className="text-gray-400 text-sm mb-4 flex items-center">
-                        <i className="fas fa-calendar-alt mr-2"></i>
-                        {certificate.date}
-                      </p>
-                      <div className="flex flex-wrap gap-3 mt-4">
-                        <a
-                          href={certificate.file}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center px-3 py-2 bg-teal-500/20 hover:bg-teal-500/30 text-teal-400 rounded-lg transition-all duration-300 border border-teal-500/30 hover:border-teal-500/50 text-sm"
-                        >
-                          <FaExternalLinkAlt className="mr-2 w-3.5 h-3.5" />
-                          View
-                        </a>
-                        <a
-                          href={certificate.file}
-                          download
-                          className="inline-flex items-center px-3 py-2 bg-teal-500/20 hover:bg-teal-500/30 text-teal-400 rounded-lg transition-all duration-300 border border-teal-500/30 hover:border-teal-500/50 text-sm"
-                        >
-                          <FaDownload className="mr-2 w-3.5 h-3.5" />
-                          Download
-                        </a>
-                      </div>
+              <div key={sectionIndex} className="animate-fade-in" style={{ animationDelay: `${sectionIndex * 0.1}s` }}>
+                <button
+                  onClick={() => toggleCategory(section.category)}
+                  className={`w-full bg-gradient-to-r ${section.color} rounded-lg p-6 text-left transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/20 transform hover:scale-101 group`}
+                >
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center gap-3">
+                      <FaCertificate className="text-white text-2xl group-hover:scale-110 transition-transform duration-300" />
+                      <h2 className="text-2xl font-bold text-white group-hover:text-white/90 transition-colors duration-300">
+                        {section.category}
+                      </h2>
                     </div>
-                  ))}
+                    <span className={`text-white text-2xl transition-transform duration-300 ${expandedCategory === section.category ? 'rotate-180' : ''}`}>
+                      ↓
+                    </span>
+                  </div>
+                </button>
+
+                {/* Expanded content */}
+                <div className={`overflow-hidden transition-all duration-300 ${expandedCategory === section.category ? 'max-h-96' : 'max-h-0'}`}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-800/30 rounded-b-lg">
+                    {section.certificates.map((certificate, index) => (
+                      <div
+                        key={index}
+                        className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 hover:border-teal-500/40 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 transform hover:scale-105 group animate-fade-in"
+                      >
+                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors duration-300 line-clamp-2">{certificate.title}</h3>
+                        <p className="text-teal-400 font-semibold mb-2">{certificate.issuer}</p>
+                        <p className="text-gray-400 text-sm mb-4 flex items-center hover:text-gray-300 transition-colors duration-300">
+                          <i className="fas fa-calendar-alt mr-2 text-teal-400"></i>
+                          {certificate.date}
+                        </p>
+                        <div className="flex flex-wrap gap-3 mt-4">
+                          <a
+                            href={certificate.file}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center px-3 py-2 bg-teal-500/20 hover:bg-teal-500/30 text-teal-400 rounded-lg transition-all duration-300 border border-teal-500/30 hover:border-teal-500/50 text-sm transform hover:scale-105 active:scale-95 group/btn"
+                          >
+                            <FaExternalLinkAlt className="mr-2 w-3.5 h-3.5 group-hover/btn:scale-110 transition-transform duration-300" />
+                            View
+                          </a>
+                          <a
+                            href={certificate.file}
+                            download
+                            className="inline-flex items-center px-3 py-2 bg-teal-500/20 hover:bg-teal-500/30 text-teal-400 rounded-lg transition-all duration-300 border border-teal-500/30 hover:border-teal-500/50 text-sm transform hover:scale-105 active:scale-95 group/btn"
+                          >
+                            <FaDownload className="mr-2 w-3.5 h-3.5 group-hover/btn:scale-110 transition-transform duration-300" />
+                            Download
+                          </a>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
+          </div>
+
+          {/* Stats */}
+          <div className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 text-center animate-fade-in-delay">
+            <p className="text-gray-400">
+              Total Certificates: <span className="text-teal-400 font-semibold text-xl">{certificateSections.reduce((sum, section) => sum + section.certificates.length, 0)}</span>
+            </p>
           </div>
         </div>
       </section>
