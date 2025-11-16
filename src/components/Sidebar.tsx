@@ -125,7 +125,7 @@ const Sidebar: React.FC = () => {
             })}
             <li className="animate-fade-in" style={{ animationDelay: `${navLinks.length * 50}ms` }}>
               <a 
-                href="/pdf/Uttam_py.pdf" 
+                href="/pdf/Uttam-S.-Thapa.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer" 
                 className={`flex items-center p-3 rounded-lg transition-all duration-300 group text-gray-300 hover:bg-gray-700 hover:text-white relative overflow-hidden`}
