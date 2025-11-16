@@ -23,6 +23,3 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Ignore markdown files by default (keep README.md tracked)
-*.md
-!README.md
