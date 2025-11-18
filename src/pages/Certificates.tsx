@@ -153,32 +153,32 @@ const Certificates: React.FC = () => {
               <div key={sectionIndex} className="animate-fade-in" style={{ animationDelay: `${sectionIndex * 0.1}s` }}>
                 <button
                   onClick={() => toggleCategory(section.category)}
-                  className={`w-full bg-gradient-to-r ${section.color} rounded-lg p-6 text-left transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/20 transform hover:scale-101 group`}
+                  className={`w-full bg-gradient-to-r ${section.color} rounded-lg p-4 sm:p-6 text-left transition-all duration-300 hover:shadow-xl hover:shadow-teal-500/20 transform hover:scale-101 group`}
                 >
                   <div className="flex items-center justify-between">
-                    <div className="flex items-center gap-3">
-                      <FaCertificate className="text-white text-2xl group-hover:scale-110 transition-transform duration-300" />
-                      <h2 className="text-2xl font-bold text-white group-hover:text-white/90 transition-colors duration-300">
+                    <div className="flex items-center gap-2 sm:gap-3">
+                      <FaCertificate className="text-white text-xl sm:text-2xl group-hover:scale-110 transition-transform duration-300" />
+                      <h2 className="text-lg sm:text-2xl font-bold text-white group-hover:text-white/90 transition-colors duration-300">
                         {section.category}
                       </h2>
                     </div>
-                    <span className={`text-white text-2xl transition-transform duration-300 ${expandedCategory === section.category ? 'rotate-180' : ''}`}>
+                    <span className={`text-white text-xl sm:text-2xl transition-transform duration-300 ${expandedCategory === section.category ? 'rotate-180' : ''}`}>
                       ↓
                     </span>
                   </div>
                 </button>
 
-                {/* Expanded content */}
-                <div className={`overflow-hidden transition-all duration-300 ${expandedCategory === section.category ? 'max-h-96' : 'max-h-0'}`}>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-6 bg-gray-800/30 rounded-b-lg">
+                {/* Expanded content - scrollable on mobile */}
+                <div className={`overflow-hidden transition-all duration-300 ${expandedCategory === section.category ? 'max-h-screen sm:max-h-96 overflow-y-auto' : 'max-h-0'}`}>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-6 p-4 sm:p-6 bg-gray-800/30 rounded-b-lg">
                     {section.certificates.map((certificate, index) => (
                       <div
                         key={index}
-                        className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 hover:border-teal-500/40 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 transform hover:scale-105 group animate-fade-in"
+                        className="bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg p-4 sm:p-6 hover:border-teal-500/40 hover:shadow-xl hover:shadow-teal-500/10 transition-all duration-300 transform hover:scale-105 group animate-fade-in"
                       >
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors duration-300 line-clamp-2">{certificate.title}</h3>
-                        <p className="text-teal-400 font-semibold mb-2">{certificate.issuer}</p>
-                        <p className="text-gray-400 text-sm mb-4 flex items-center hover:text-gray-300 transition-colors duration-300">
+                        <h3 className="text-base sm:text-lg font-bold text-white mb-2 group-hover:text-teal-400 transition-colors duration-300 line-clamp-2">{certificate.title}</h3>
+                        <p className="text-teal-400 font-semibold text-sm">{certificate.issuer}</p>
+                        <p className="text-gray-400 text-xs sm:text-sm mb-4 flex items-center hover:text-gray-300 transition-colors duration-300">
                           <i className="fas fa-calendar-alt mr-2 text-teal-400"></i>
                           {certificate.date}
                         </p>

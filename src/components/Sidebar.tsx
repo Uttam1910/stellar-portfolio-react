@@ -70,7 +70,7 @@ const Sidebar: React.FC = () => {
       </div>
 
       {/* Sidebar */}
-      <aside className={`lg:w-64 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white fixed h-full flex flex-col transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out z-40 shadow-2xl border-r border-teal-500/10`}>
+      <aside className={`lg:w-64 bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white fixed h-screen w-full sm:w-80 flex flex-col transform ${isOpen ? 'translate-x-0' : '-translate-x-full'} lg:translate-x-0 transition-transform duration-300 ease-in-out z-40 shadow-2xl border-r border-teal-500/10 overflow-y-auto`}>
         
         {/* Close button for mobile */}
         <div className="lg:hidden flex justify-end p-4 border-b border-gray-700">
@@ -89,7 +89,7 @@ const Sidebar: React.FC = () => {
             <img 
               src="/images/uttam.JPG" 
               alt="Uttam" 
-              className="w-24 h-24 rounded-full border-4 border-teal-400 shadow-lg object-cover transition-transform duration-300 group-hover:scale-110 group-hover:shadow-glow" 
+              className="w-32 h-32 rounded-full border-4 border-teal-400 shadow-lg object-cover object-top transition-transform duration-300 group-hover:scale-110 group-hover:shadow-glow" 
             />
             <div className="absolute bottom-0 right-0 w-4 h-4 bg-teal-400 rounded-full border-2 border-gray-900 animate-pulse"></div>
           </div>

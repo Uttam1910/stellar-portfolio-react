@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
-import { FaLinkedin as FaLinkedinIcon, FaGithub as FaGithubIcon, FaEnvelope as FaEnvelopeIcon, FaTwitter as FaTwitterIcon, FaCheckCircle as FaCheckCircleIcon, FaDownload as FaDownloadIcon } from 'react-icons/fa';
+import { FaLinkedin as FaLinkedinIcon, FaGithub as FaGithubIcon, FaEnvelope as FaEnvelopeIcon, FaTwitter as FaTwitterIcon, FaCheckCircle as FaCheckCircleIcon } from 'react-icons/fa';
 
 // ✅ TypeScript-safe casts for react-icons
 const FaLinkedin = FaLinkedinIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
@@ -8,7 +8,6 @@ const FaGithub = FaGithubIcon as React.ComponentType<React.SVGProps<SVGSVGElemen
 const FaEnvelope = FaEnvelopeIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const FaTwitter = FaTwitterIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 const FaCheckCircle = FaCheckCircleIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
-const FaDownload = FaDownloadIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 const Contact: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -134,8 +133,8 @@ const Contact: React.FC = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="bg-gradient-to-br from-gray-800/60 to-gray-800/40 backdrop-blur-sm border border-teal-500/20 rounded-lg p-6 lg:p-8 animate-fade-in-delay-2 hover:border-teal-500/40 transition-all duration-300">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <div className="bg-gradient-to-br from-gray-800/60 to-gray-800/40 backdrop-blur-sm border border-teal-500/20 rounded-lg p-4 sm:p-6 lg:p-8 animate-fade-in-delay-2 hover:border-teal-500/40 transition-all duration-300">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6">
               <div className="hidden lg:flex flex-col justify-between p-4 pr-6 border-r border-teal-500/10">
                 <div>
                   <h3 className="text-xl font-bold text-white mb-2">Let's talk</h3>
@@ -176,14 +175,14 @@ const Contact: React.FC = () => {
               <div className="p-2 lg:p-0">
             {showSuccess && (
               <div className="mb-6 p-4 bg-green-500/20 border border-green-500/50 rounded-lg flex items-center gap-3 animate-fade-in">
-                <FaCheckCircle className="w-5 h-5 text-green-400" />
-                <span className="text-green-400 font-semibold">Message sent successfully! I'll get back to you soon.</span>
+                <FaCheckCircle className="w-5 h-5 text-green-400 flex-shrink-0" />
+                <span className="text-green-400 font-semibold text-sm sm:text-base">Message sent successfully! I'll get back to you soon.</span>
               </div>
             )}
 
-            <form id="contact-form" onSubmit={handleSubmit} className="space-y-6">
+            <form id="contact-form" onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
               <div className="group">
-                <label htmlFor="name" className="block text-gray-300 font-semibold mb-2 group-hover:text-teal-400 transition-colors duration-300">
+                <label htmlFor="name" className="block text-gray-300 font-semibold mb-2 text-sm sm:text-base group-hover:text-teal-400 transition-colors duration-300">
                   Name
                 </label>
                 <input
@@ -193,12 +192,12 @@ const Contact: React.FC = () => {
                   required
                   value={formData.name}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-transparent border border-teal-500/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-400/60 focus:ring-2 focus:ring-teal-500/10 transition-all duration-300 hover:border-teal-500/30"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-teal-500/10 rounded-lg text-white placeholder-gray-500 text-sm sm:text-base focus:outline-none focus:border-teal-400/60 focus:ring-2 focus:ring-teal-500/10 transition-all duration-300 hover:border-teal-500/30"
                   placeholder="Your Name"
                 />
               </div>
               <div className="group">
-                <label htmlFor="email" className="block text-gray-300 font-semibold mb-2 group-hover:text-teal-400 transition-colors duration-300">
+                <label htmlFor="email" className="block text-gray-300 font-semibold mb-2 text-sm sm:text-base group-hover:text-teal-400 transition-colors duration-300">
                   Email
                 </label>
                 <input
@@ -208,35 +207,53 @@ const Contact: React.FC = () => {
                   required
                   value={formData.email}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-transparent border border-teal-500/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-400/60 focus:ring-2 focus:ring-teal-500/10 transition-all duration-300 hover:border-teal-500/30"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-teal-500/10 rounded-lg text-white placeholder-gray-500 text-sm sm:text-base focus:outline-none focus:border-teal-400/60 focus:ring-2 focus:ring-teal-500/10 transition-all duration-300 hover:border-teal-500/30"
                   placeholder="your.email@example.com"
                 />
               </div>
               <div className="group">
-                <label htmlFor="message" className="block text-gray-300 font-semibold mb-2 group-hover:text-teal-400 transition-colors duration-300">
+                <label htmlFor="message" className="block text-gray-300 font-semibold mb-2 text-sm sm:text-base group-hover:text-teal-400 transition-colors duration-300">
                   Message
                 </label>
                 <textarea
                   id="message"
                   name="message"
-                  rows={6}
+                  rows={5}
                   required
                   value={formData.message}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 bg-transparent border border-teal-500/10 rounded-lg text-white placeholder-gray-500 focus:outline-none focus:border-teal-400/60 focus:ring-2 focus:ring-teal-500/10 transition-all duration-300 resize-none hover:border-teal-500/30"
+                  className="w-full px-3 sm:px-4 py-2 sm:py-3 bg-transparent border border-teal-500/10 rounded-lg text-white placeholder-gray-500 text-sm sm:text-base focus:outline-none focus:border-teal-400/60 focus:ring-2 focus:ring-teal-500/10 transition-all duration-300 resize-none hover:border-teal-500/30"
                   placeholder="Your Message"
                 />
               </div>
               <button
                 type="submit"
                 disabled={isSending}
-                className="w-full px-8 py-3 bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-gray-900 font-semibold rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-teal-500/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none active:scale-95 relative overflow-hidden group"
+                className="w-full px-6 sm:px-8 py-2.5 sm:py-3 bg-gradient-to-r from-teal-500 to-cyan-500 hover:from-teal-600 hover:to-cyan-600 text-gray-900 font-semibold text-sm sm:text-base rounded-lg transition-all duration-300 transform hover:scale-105 hover:shadow-lg hover:shadow-teal-500/30 disabled:opacity-50 disabled:cursor-not-allowed disabled:transform-none active:scale-95 relative overflow-hidden group"
               >
                 <span className="absolute inset-0 bg-white/0 group-hover:bg-white/10 transition-all duration-300"></span>
                 <span className="relative z-10">{isSending ? 'Sending...' : 'Send Message'}</span>
               </button>
             </form>
+
+            {/* Mobile-only Hire Me section */}
+            <div className="lg:hidden mt-6 pt-6 border-t border-teal-500/10">
+              <h4 className="text-lg font-bold text-white mb-2">Hire Me</h4>
+              <p className="text-sm text-gray-300 mb-3">Looking to build a product, iterate on an idea, or bring a web app to production? I help teams and founders ship fast, maintain quality, and scale reliably.</p>
+
+              <ul className="text-sm text-gray-300 space-y-1 mb-4">
+                <li>• Full-stack product development</li>
+                <li>• Prototype & MVP delivery</li>
+                <li>• Performance & accessibility improvements</li>
+              </ul>
+
+              <div className="space-y-2">
+                <p className="text-sm text-gray-400"><strong>Availability:</strong> Full-time, Freelance, Mentorship</p>
+                <p className="text-sm text-gray-400"><strong>Email:</strong> <a href="mailto:ut224365@gmail.com" className="text-teal-400">ut224365@gmail.com</a></p>
+                <p className="text-sm text-gray-400"><strong>Response:</strong> <span className="text-teal-400">~24 hours</span></p>
+              </div>
             </div>
+              </div>
           </div>
           </div>
 

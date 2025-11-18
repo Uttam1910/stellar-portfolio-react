@@ -121,7 +121,7 @@ const Skills: React.FC = () => {
           </div>
 
           {/* Skills Grid - Collapsible Cards with selectable skills */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-6">
             {skillCategories.map((category, index) => (
               <div
                 key={category.title}
@@ -145,8 +145,8 @@ const Skills: React.FC = () => {
                   </button>
 
                   {/* Expanded content (fixed max height + internal scrolling to avoid layout jumps) */}
-                  <div className={`mt-4 overflow-hidden transition-all duration-300 ${expandedCategory === category.title ? 'max-h-[20rem]' : 'max-h-0'}`}>
-                    <div className={`${expandedCategory === category.title ? 'max-h-[20rem] overflow-y-auto pr-2' : 'max-h-0'}`} style={{ scrollBehavior: 'smooth' }}>
+                  <div className={`mt-4 overflow-hidden transition-all duration-300 ${expandedCategory === category.title ? 'max-h-[20rem] sm:max-h-[25rem]' : 'max-h-0'}`}>
+                    <div className={`${expandedCategory === category.title ? 'max-h-[20rem] sm:max-h-[25rem] overflow-y-auto pr-2' : 'max-h-0'}`} style={{ scrollBehavior: 'smooth' }}>
                       {category.skills.map((skill) => {
                         const isSelected = selectedSkill?.skill.name === skill.name && selectedSkill?.category === category.title;
                         return (
@@ -196,30 +196,47 @@ const Skills: React.FC = () => {
               </div>
             </div>
           </div>
-          {/* Selected Skill Detail (desktop) */}
+          {/* Selected Skill Detail (desktop fixed + mobile inline) */}
           {selectedSkill && (
-            <div className="fixed right-6 top-40 w-80 hidden lg:block z-50">
-              <div className="bg-gray-900/70 backdrop-blur rounded-xl border border-teal-500/20 p-4 shadow-xl">
-                <div className="flex items-start justify-between gap-2">
+            <>
+              {/* Desktop fixed panel */}
+              <div className="fixed right-6 top-40 w-80 hidden lg:block z-50">
+                <div className="bg-gray-900/70 backdrop-blur rounded-xl border border-teal-500/20 p-4 shadow-xl">
+                  <div className="flex items-start justify-between gap-2">
+                    <div>
+                      <h3 className="text-lg font-bold text-white">{selectedSkill.skill.name}</h3>
+                      <p className="text-sm text-gray-300 mt-1">Category: <span className="text-teal-400 font-medium">{selectedSkill.category}</span></p>
+                    </div>
+                    <button onClick={clearSelection} className="text-gray-400 hover:text-white">✕</button>
+                  </div>
+                  <div className="mt-3">
+                    <p className="text-sm text-gray-300">{selectedSkill.skill.name} — experience level: <span className="text-teal-400 font-semibold">{selectedSkill.skill.level}%</span>. Used across projects and prototypes to build production-ready features and improve developer workflows.</p>
+                  </div>
+                  <div className="mt-4">
+                    <div className="relative h-2 bg-gray-800 rounded-full overflow-hidden">
+                      <div className="h-full bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full transition-all duration-700" style={{ width: `${selectedSkill.skill.level}%` }} />
+                    </div>
+                  </div>
+                  <div className="mt-3 flex gap-2">
+                    <button onClick={clearSelection} className="px-3 py-1 text-sm bg-gray-800/40 rounded-md text-white hover:bg-gray-700/60">Close</button>
+                  </div>
+                </div>
+              </div>
+              {/* Mobile inline card below grid */}
+              <div className="lg:hidden w-full mt-4 p-4 bg-gray-800/50 backdrop-blur-sm border border-teal-500/20 rounded-lg animate-fade-in">
+                <div className="flex items-start justify-between gap-2 mb-3">
                   <div>
                     <h3 className="text-lg font-bold text-white">{selectedSkill.skill.name}</h3>
                     <p className="text-sm text-gray-300 mt-1">Category: <span className="text-teal-400 font-medium">{selectedSkill.category}</span></p>
                   </div>
-                  <button onClick={clearSelection} className="text-gray-400 hover:text-white">✕</button>
+                  <button onClick={clearSelection} className="text-gray-400 hover:text-white text-xl">✕</button>
                 </div>
-                <div className="mt-3">
-                  <p className="text-sm text-gray-300">{selectedSkill.skill.name} — experience level: <span className="text-teal-400 font-semibold">{selectedSkill.skill.level}%</span>. Used across projects and prototypes to build production-ready features and improve developer workflows.</p>
-                </div>
-                <div className="mt-4">
-                  <div className="relative h-2 bg-gray-800 rounded-full overflow-hidden">
-                    <div className="h-full bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full transition-all duration-700" style={{ width: `${selectedSkill.skill.level}%` }} />
-                  </div>
-                </div>
-                <div className="mt-3 flex gap-2">
-                  <button onClick={clearSelection} className="px-3 py-1 text-sm bg-gray-800/40 rounded-md text-white hover:bg-gray-700/60">Close</button>
+                <p className="text-sm text-gray-300 mb-3">{selectedSkill.skill.name} — experience level: <span className="text-teal-400 font-semibold">{selectedSkill.skill.level}%</span></p>
+                <div className="relative h-2 bg-gray-700 rounded-full overflow-hidden">
+                  <div className="h-full bg-gradient-to-r from-teal-500 to-cyan-500 rounded-full transition-all duration-700" style={{ width: `${selectedSkill.skill.level}%` }} />
                 </div>
               </div>
-            </div>
+            </>
           )}
         </div>
       </section>
