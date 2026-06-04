@@ -8,7 +8,7 @@ const Projects = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [activeCategory, setActiveCategory] = useState("all");
 
-  const projects = [
+  const projects = useMemo(() => [
     {
       title: "Golden Leaf Knots",
       thumbnail: "/images/imp.jpg",
@@ -143,7 +143,7 @@ const Projects = () => {
         "A Quiz App built with an intuitive and user-friendly interface, allowing users to take quizzes on various topics. Features include timed quizzes, multiple question types (MCQs, true/false), real-time scoring, and result tracking.",
       category: "fullstack",
     },
-  ];
+  ], []);
 
   const categories = [
     { id: "all", label: "All Projects" },
@@ -161,7 +161,7 @@ const Projects = () => {
         activeCategory === "all" || project.category === activeCategory;
       return matchesSearch && matchesCategory;
     });
-  }, [searchTerm, activeCategory]);
+  }, [projects, searchTerm, activeCategory]);
 
   return (
     <main className="flex-1 min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white relative overflow-hidden">

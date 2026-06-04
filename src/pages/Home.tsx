@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo } from 'react';
 import Typed from 'typed.js';
 import { BsLinkedin as BsLinkedinIcon, BsGithub as BsGithubIcon } from 'react-icons/bs';
 import { Link } from 'react-router-dom';
@@ -8,8 +8,6 @@ const BsLinkedin = BsLinkedinIcon as React.ComponentType<React.SVGProps<SVGSVGEl
 const BsGithub = BsGithubIcon as React.ComponentType<React.SVGProps<SVGSVGElement>>;
 
 const Home: React.FC = React.memo(() => {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
-
   const typedStrings = useMemo(
     () => [
       'A Full Stack Developer.',
@@ -34,16 +32,6 @@ const Home: React.FC = React.memo(() => {
       typed.destroy();
     };
   }, [typedStrings]);
-
-  // Mouse tracking for interactive effects
-  useEffect(() => {
-    const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-    };
-
-    window.addEventListener('mousemove', handleMouseMove);
-    return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
 
   return (
     <main className="flex-1 min-h-screen bg-gradient-to-br from-gray-900 via-slate-900 to-gray-800 text-white relative overflow-hidden">
