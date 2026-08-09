@@ -6,7 +6,7 @@ import { FaArrowRight, FaFileDownload, FaGithub, FaBuilding, FaGraduationCap } f
 
 export const Hero: React.FC = () => {
   return (
-    <section id="hero" className="py-16 sm:py-24 bg-slate-900 border-b border-slate-700/60 relative">
+    <section id="hero" className="pt-8 sm:pt-10 pb-16 sm:pb-20 bg-slate-900 border-b border-slate-700/60 relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
           

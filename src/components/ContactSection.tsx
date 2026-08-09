@@ -49,7 +49,7 @@ export const ContactSection: React.FC = () => {
   };
 
   return (
-    <section id="contact" className="py-20 sm:py-28 bg-slate-900 border-b border-slate-700/60">
+    <section id="contact" className="pt-8 sm:pt-10 pb-20 sm:pb-28 bg-slate-900 border-b border-slate-700/60">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

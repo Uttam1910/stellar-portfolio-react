@@ -12,7 +12,7 @@ export const ContactPage: React.FC = () => {
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
       <Header />
 
-      <main className="flex-1 py-12">
+      <main className="flex-1 pt-2 sm:pt-4 pb-12">
         <ContactSection />
       </main>
 

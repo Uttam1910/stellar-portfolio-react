@@ -14,7 +14,7 @@ export const ResumePage: React.FC = () => {
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
       <Header />
 
-      <main className="flex-1 py-16 sm:py-24">
+      <main className="flex-1 pt-8 sm:pt-10 pb-16 sm:pb-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-12">
           
           {/* Back Navigation */}
