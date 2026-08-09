@@ -4,13 +4,40 @@ import { Footer } from '../components/Footer';
 import { growveExperience, additionalExperiences } from '../data/portfolioData';
 import { FaBuilding, FaCalendarAlt, FaFileAlt, FaCheck, FaBriefcase, FaTrophy } from 'react-icons/fa';
 
+import { SEOHead } from '../components/SEOHead';
+
 export const ExperiencePage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.uttamthapa.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Experience",
+        "item": "https://www.uttamthapa.com/experience"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+      <SEOHead
+        title="Uttam Thapa — Software Engineering Experience & Track Record"
+        description="Commercial software engineering track record of Uttam Thapa at Growve, working with Next.js, Fastify, Node.js, PostgreSQL multi-tenant architecture, BullMQ, Redis, webhooks, and Azure."
+        canonicalUrl="https://www.uttamthapa.com/experience"
+        jsonLd={breadcrumbJsonLd}
+      />
       <Header />
 
       <main className="flex-1 pt-8 sm:pt-10 pb-16 sm:pb-24">

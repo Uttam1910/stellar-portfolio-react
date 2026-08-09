@@ -4,11 +4,12 @@ export interface ProjectCaseStudy {
   category: string;
   oneLiner: string;
   description: string;
-  github: string;
+  github?: string;
   liveUrl?: string;
   thumbnail: string;
   tech: string[];
   featured: boolean;
+  tier: 'flagship' | 'supporting' | 'archive';
   problem: string;
   solution: string;
   keyFeatures: string[];
@@ -158,6 +159,42 @@ export const additionalExperiences: ExperienceRole[] = [
 
 export const flagshipCaseStudies: ProjectCaseStudy[] = [
   {
+    slug: "sellerzonee",
+    title: "SellerZonee",
+    category: "SaaS / Multi-Tenant",
+    oneLiner: "Multi-tenant commerce SaaS platform for Instagram and WhatsApp sellers with automated catalog management and checkout.",
+    description: "A multi-tenant commerce SaaS platform providing social media merchants with instant digital storefronts, catalog management, inventory tracking, order processing, and payment webhook verification.",
+    liveUrl: "https://sellerzonee.com",
+    thumbnail: "/images/projects/sellerzonee.png",
+    tech: ["Next.js", "React", "Prisma", "PostgreSQL", "Razorpay", "Stripe", "Supabase", "Cloudinary"],
+    featured: true,
+    tier: "flagship",
+    problem: "Social media merchants selling on Instagram and WhatsApp lack structured catalog management, automated order routing, and secure payment checkout systems.",
+    solution: "Engineered a multi-tenant commerce SaaS infrastructure enabling independent merchants to spawn digital storefronts backed by PostgreSQL multi-schema data isolation and payment webhooks.",
+    keyFeatures: [
+      "Multi-tenant merchant storefront initialization",
+      "Automated catalog and inventory management workflows",
+      "Stripe and Razorpay checkout payment gateway integration",
+      "Webhook signature verification for real-time order state updates",
+      "Merchant analytics dashboard for sales and inventory tracking"
+    ],
+    architectureNodes: [
+      { name: "Next.js Storefront Client", type: "client" },
+      { name: "SaaS API Gateway", type: "api" },
+      { name: "Prisma & Multi-Tenant Schema", type: "logic" },
+      { name: "PostgreSQL Database", type: "database" },
+      { name: "Razorpay & Stripe Webhooks", type: "external" }
+    ],
+    technicalDecisions: [
+      { title: "Prisma ORM & PostgreSQL", reasoning: "Delivers strict type safety and relational data mapping across multi-tenant merchant entities." },
+      { title: "Webhook Event Signature Verification", reasoning: "Guarantees idempotent processing of payment state transitions from Stripe and Razorpay." }
+    ],
+    security: ["Stripe & Razorpay cryptographic webhook verification", "Supabase auth session token validation", "Sanitized input fields"],
+    integrations: ["Razorpay Payment API", "Stripe Payment Gateway", "Cloudinary Media Upload SDK"],
+    deployment: "Vercel Edge Platform & Supabase Managed Database",
+    currentState: "Active production deployment hosting merchant storefronts."
+  },
+  {
     slug: "velvet-loop",
     title: "Velvet Loop",
     category: "Full-Stack E-Commerce",
@@ -168,6 +205,7 @@ export const flagshipCaseStudies: ProjectCaseStudy[] = [
     thumbnail: "/images/tvl.PNG",
     tech: ["Next.js", "React", "Node.js", "Express", "MongoDB", "Razorpay", "Cloudinary", "Tailwind CSS"],
     featured: true,
+    tier: "flagship",
     problem: "Small artisanal businesses struggle with manual order collection, unoptimized image delivery, and complex checkout procedures when scaling online sales.",
     solution: "Built an end-to-end full-stack platform providing instant category browsing, secure multi-method online checkout via Razorpay, and Cloudinary media optimization.",
     keyFeatures: [
@@ -195,16 +233,51 @@ export const flagshipCaseStudies: ProjectCaseStudy[] = [
     currentState: "Active production deployment hosting product catalog and checkout flows."
   },
   {
+    slug: "lifeos",
+    title: "LifeOS",
+    category: "AI Systems / Product",
+    oneLiner: "AI-assisted productivity workspace combining structured notes, task tracking, and semantic knowledge retrieval.",
+    description: "An AI-assisted knowledge workspace that integrates semantic search, vector embeddings, and NLP intent parsing for context-aware note taking and task execution.",
+    liveUrl: "https://lifeos-five-taupe.vercel.app/",
+    thumbnail: "/images/projects/lifeos.png",
+    tech: ["React", "TypeScript", "Vite", "OpenAI API", "Vector Embeddings", "NLP", "IndexedDB"],
+    featured: true,
+    tier: "flagship",
+    problem: "Knowledge workers struggle to search, organize, and extract insights across fragmented notes and task lists.",
+    solution: "Engineered an AI-assisted workspace leveraging OpenAI embeddings and client-side vector similarity search for instant context retrieval.",
+    keyFeatures: [
+      "Semantic similarity search across local note repositories",
+      "NLP intent extraction for dynamic task generation",
+      "Local-first state management backed by IndexedDB",
+      "Fast HMR build pipeline using Vite and React"
+    ],
+    architectureNodes: [
+      { name: "React & Vite Interface", type: "client" },
+      { name: "NLP Intent Engine", type: "logic" },
+      { name: "IndexedDB Local Store", type: "database" },
+      { name: "OpenAI Embeddings API", type: "external" }
+    ],
+    technicalDecisions: [
+      { title: "Local-First Architecture", reasoning: "Guarantees instant zero-latency query response while preserving user privacy." },
+      { title: "Vector Similarity Matching", reasoning: "Enables natural-language semantic lookup beyond simple keyword string matches." }
+    ],
+    security: ["Local API key storage encryption", "Sanitized prompt inputs"],
+    integrations: ["OpenAI Embeddings & Completion APIs"],
+    deployment: "Vercel Platform Deployment",
+    currentState: "Live active web application."
+  },
+  {
     slug: "ai-travel-planner",
     title: "AI Travel Planner",
-    category: "AI / Intelligent System",
+    category: "AI Systems",
     oneLiner: "Intelligent itinerary planner generating personalized travel schedules and route recommendations.",
     description: "An AI-powered web tool that processes user travel parameters (destination, budget, duration, interests) to construct dynamic day-by-day itineraries and attraction recommendations.",
     github: "https://github.com/Uttam1910/AI_TRAVEL_PLANNER",
     liveUrl: "https://ai-travel-planner-seven-sand.vercel.app/",
     thumbnail: "/images/projects/ai-travel-planner.svg",
-    tech: ["React", "Node.js", "Python", "Tailwind CSS", "AI Recommendation API", "Vercel"],
+    tech: ["React", "Node.js", "Python", "Tailwind CSS", "AI Recommendation API"],
     featured: true,
+    tier: "flagship",
     problem: "Travelers spend hours manually researching attractions, estimating costs, and structuring daily itineraries for new travel destinations.",
     solution: "Engineered an AI travel recommendation assistant that converts user preferences into structured travel plans and route summaries.",
     keyFeatures: [
@@ -230,7 +303,7 @@ export const flagshipCaseStudies: ProjectCaseStudy[] = [
   {
     slug: "golden-leaf-knots",
     title: "Golden Leaf Knots",
-    category: "Full-Stack Showcase",
+    category: "Full-Stack / E-Commerce",
     oneLiner: "Artisanal product showcase platform with real-time category filtering and inquiry routing.",
     description: "A business platform custom-built to showcase handcrafted crochet items, gifts, and floral art with fast category searching and direct customer inquiry routing.",
     github: "https://github.com/Uttam1910/golden-leaf-knots",
@@ -238,6 +311,7 @@ export const flagshipCaseStudies: ProjectCaseStudy[] = [
     thumbnail: "/images/imp.jpg",
     tech: ["React", "JavaScript", "Tailwind CSS", "Vercel"],
     featured: true,
+    tier: "flagship",
     problem: "Handcrafted product creators require a clean digital showroom to display product lines without high marketplace fees.",
     solution: "Built a high-contrast web catalog featuring instant client-side filtering and optimized product image displays.",
     keyFeatures: [
@@ -266,6 +340,7 @@ export const flagshipCaseStudies: ProjectCaseStudy[] = [
     thumbnail: "/images/LMS.png",
     tech: ["React", "Vite", "Node.js", "Express.js", "MongoDB", "JWT Auth"],
     featured: true,
+    tier: "flagship",
     problem: "Educational platforms require robust user permission boundaries (Admins, Instructors, Students) and efficient course data querying.",
     solution: "Designed a MERN application featuring JWT authentication, role-based access control (RBAC), and MongoDB aggregation pipelines for enrollment tracking.",
     keyFeatures: [
@@ -293,6 +368,37 @@ export const flagshipCaseStudies: ProjectCaseStudy[] = [
 export const archiveProjects: ProjectCaseStudy[] = [
   ...flagshipCaseStudies,
   {
+    slug: "realtime-chat-platform",
+    title: "Real-Time Chat Platform",
+    category: "Real-Time / Full-Stack",
+    oneLiner: "Real-time messaging application with live presence tracking, typing indicators, and media sharing.",
+    description: "A full-stack messaging platform featuring WebSocket bi-directional communication, real-time presence indicators, JWT session authentication, and Cloudinary media delivery.",
+    liveUrl: "https://pulse-chat-web-nine.vercel.app/",
+    thumbnail: "/images/projects/realtime-chat.png",
+    tech: ["WebSockets", "Socket.IO", "Node.js", "Express", "MongoDB", "Cloudinary", "React"],
+    featured: false,
+    tier: "supporting",
+    problem: "Standard HTTP request polling introduces latency and server overload during multi-user messaging sessions.",
+    solution: "Implemented WebSocket bi-directional streaming via Socket.IO for sub-100ms message delivery and live presence updates.",
+    keyFeatures: [
+      "Bi-directional WebSocket streaming via Socket.IO",
+      "User online/offline presence tracking and typing indicators",
+      "JWT stateless session authorization",
+      "Cloudinary media attachment upload processing"
+    ],
+    architectureNodes: [
+      { name: "React Client", type: "client" },
+      { name: "Express & Socket.IO Server", type: "api" },
+      { name: "WebSocket Dispatcher", type: "logic" },
+      { name: "MongoDB Database", type: "database" }
+    ],
+    technicalDecisions: [
+      { title: "Socket.IO WebSockets", reasoning: "Eliminates HTTP polling overhead for real-time messaging." }
+    ],
+    deployment: "Vercel Platform",
+    currentState: "Live deployed web application."
+  },
+  {
     slug: "employee-management",
     title: "Employee Management System",
     category: "Full-Stack Dashboard",
@@ -303,6 +409,7 @@ export const archiveProjects: ProjectCaseStudy[] = [
     thumbnail: "/images/employee-management-system.svg",
     tech: ["React", "Node.js", "Express", "MongoDB", "Tailwind CSS"],
     featured: false,
+    tier: "supporting",
     problem: "Organizations require central dashboards to maintain employee attendance and role permissions cleanly.",
     solution: "Built a responsive management dashboard with filterable data tables and MongoDB persistence.",
     keyFeatures: ["Employee profile management", "Attendance and role record tracking", "Filterable data tables"],
@@ -316,9 +423,96 @@ export const archiveProjects: ProjectCaseStudy[] = [
     currentState: "Live deployed application."
   },
   {
+    slug: "backend-services",
+    title: "Backend Services",
+    category: "Backend / API Engineering",
+    oneLiner: "Reusable backend API modules, JWT authentication middleware, and Redis rate limiting architecture.",
+    description: "A backend infrastructure codebase implementing standardized REST API routing, bcrypt password hashing, JWT bearer authorization middleware, input validation, and Redis-backed rate limiting.",
+    github: "https://github.com/Uttam1910/Backend",
+    thumbnail: "/images/projects/backend-services.png",
+    tech: ["Node.js", "Express", "TypeScript", "JWT", "bcrypt", "Redis", "REST APIs"],
+    featured: false,
+    tier: "supporting",
+    problem: "Distributed web services require standardized authorization middleware, input sanitization, and rate-limiting modules.",
+    solution: "Engineered a modular Node.js/Express backend library incorporating JWT bearer middleware, bcrypt hashing, and Redis rate limiting.",
+    keyFeatures: [
+      "JWT authentication middleware for protected API endpoints",
+      "Bcrypt password hashing and salt generation",
+      "Redis sliding-window rate limiting",
+      "Standardized error response formats"
+    ],
+    architectureNodes: [
+      { name: "Express API Framework", type: "api" },
+      { name: "JWT Auth Middleware", type: "logic" },
+      { name: "Redis Rate Store", type: "database" }
+    ],
+    technicalDecisions: [
+      { title: "Redis Sliding-Window Rate Limiting", reasoning: "Prevents API abuse and endpoint DDoS spikes." }
+    ],
+    deployment: "GitHub Open Source Repository",
+    currentState: "Open-source backend service codebase."
+  },
+  {
+    slug: "image-py",
+    title: "ImagePy",
+    category: "Computer Vision",
+    oneLiner: "Python computer-vision library for image transformations, contour extraction, and edge detection.",
+    description: "A specialized Python image processing utility providing edge detection algorithms, matrix operations, contour extraction, and batch transformation scripts.",
+    github: "https://github.com/Uttam1910/Image_py",
+    thumbnail: "/images/projects/image-py.png",
+    tech: ["Python", "OpenCV", "NumPy", "Pillow", "Computer Vision"],
+    featured: false,
+    tier: "supporting",
+    problem: "Image processing tasks require fast matrix transformation pipelines and edge detection routines.",
+    solution: "Created Python computer vision scripts using OpenCV and NumPy for automated contour extraction and batch image transformations.",
+    keyFeatures: [
+      "OpenCV Canny edge detection algorithms",
+      "NumPy matrix image manipulation",
+      "Batch image resizing and format transformation"
+    ],
+    architectureNodes: [
+      { name: "Python CLI Utility", type: "client" },
+      { name: "OpenCV & NumPy Engine", type: "logic" }
+    ],
+    technicalDecisions: [
+      { title: "OpenCV + NumPy", reasoning: "Leverages C-optimized matrix math for ultra-fast image processing." }
+    ],
+    deployment: "GitHub Repository",
+    currentState: "Open-source Python utility package."
+  },
+  {
+    slug: "airline-demand-prediction",
+    title: "Airline Demand Prediction",
+    category: "Machine Learning",
+    oneLiner: "Machine learning forecasting model predicting flight passenger demand using regression analysis.",
+    description: "A data science and machine learning application leveraging feature engineering, regression models, and data pipelines for airline passenger volume forecasting.",
+    github: "https://github.com/Uttam1910/airline-demand-app",
+    thumbnail: "/images/projects/airline-demand.png",
+
+    tech: ["Python", "Pandas", "NumPy", "scikit-learn", "Machine Learning", "Regression"],
+    featured: false,
+    tier: "supporting",
+    problem: "Airlines need quantitative passenger volume forecasts to optimize flight scheduling and pricing.",
+    solution: "Trained machine learning regression models on historical flight data to forecast demand trends.",
+    keyFeatures: [
+      "Pandas & NumPy data preprocessing pipeline",
+      "Feature engineering for seasonal demand indicators",
+      "Scikit-learn regression model training and evaluation"
+    ],
+    architectureNodes: [
+      { name: "Python Model Pipeline", type: "client" },
+      { name: "Scikit-Learn ML Engine", type: "logic" }
+    ],
+    technicalDecisions: [
+      { title: "Scikit-Learn Regression", reasoning: "Delivers interpretable demand predictions from structured flight data." }
+    ],
+    deployment: "GitHub Repository",
+    currentState: "Open-source ML repository."
+  },
+  {
     slug: "ai-product-recommender",
     title: "AI Product Recommender",
-    category: "AI / Web",
+    category: "AI Systems",
     oneLiner: "Contextual e-commerce recommendation system prototype.",
     description: "An intelligent e-commerce recommendation application leveraging preference algorithms to suggest relevant products.",
     github: "https://github.com/Uttam1910/AI-product-recommender-",
@@ -326,6 +520,7 @@ export const archiveProjects: ProjectCaseStudy[] = [
     thumbnail: "/images/projects/ai-product-recommender.svg",
     tech: ["React", "Python", "Tailwind CSS", "Vercel"],
     featured: false,
+    tier: "supporting",
     problem: "Users face catalog overload when searching for relevant products online.",
     solution: "Created a contextual matching interface that ranks products based on user preference inputs.",
     keyFeatures: ["Contextual preference scoring", "Instant category match UI"],
@@ -340,7 +535,7 @@ export const archiveProjects: ProjectCaseStudy[] = [
   {
     slug: "weather-agent-chat",
     title: "Weather Agent Chat",
-    category: "Frontend Assistant",
+    category: "AI Systems",
     oneLiner: "Conversational weather assistant with forecast summaries.",
     description: "Interactive chat assistant fetching live weather API forecasts and converting data into natural language summaries.",
     github: "https://github.com/Uttam1910/weather-agent-chat",
@@ -348,6 +543,7 @@ export const archiveProjects: ProjectCaseStudy[] = [
     thumbnail: "/images/projects/weather-agent-chat.svg",
     tech: ["React", "Weather API", "Tailwind CSS"],
     featured: false,
+    tier: "supporting",
     problem: "Standard weather apps display raw numbers rather than actionable summaries.",
     solution: "Built a chat interface converting API responses into travel summaries.",
     keyFeatures: ["Natural language query parsing", "Live weather API integration"],
@@ -376,15 +572,15 @@ export const categorizedTechStack = [
   },
   {
     domain: "DATABASE",
-    skills: ["PostgreSQL", "MongoDB", "MySQL"]
+    skills: ["PostgreSQL", "MongoDB", "MySQL", "Prisma ORM", "Redis"]
   },
   {
-    domain: "SYSTEMS",
-    skills: ["Multi-tenant architecture", "Webhooks", "BullMQ", "Redis", "Cron jobs"]
+    domain: "SYSTEMS & REAL-TIME",
+    skills: ["Multi-tenant architecture", "Webhooks", "BullMQ", "WebSockets", "Socket.IO", "Cron jobs"]
   },
   {
     domain: "CLOUD / INFRASTRUCTURE",
-    skills: ["Docker", "Microsoft Azure", "DigitalOcean", "Vercel", "Git / GitHub"]
+    skills: ["Docker", "Microsoft Azure", "DigitalOcean", "Vercel", "Supabase", "Git / GitHub"]
   }
 ];
 

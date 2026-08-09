@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="100%" height="100%">
+  <defs>
+    <linearGradient id="bg-chat" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#0284C7"/>
+    </linearGradient>
+  </defs>
+  <rect width="800" height="450" fill="url(#bg-chat)"/>
+  <rect x="50" y="50" width="700" height="350" rx="16" fill="#1E293B" stroke="#0284C7" stroke-width="2"/>
+  <rect x="50" y="50" width="700" height="48" rx="16" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <circle cx="80" cy="74" r="6" fill="#EF4444"/>
+  <circle cx="100" cy="74" r="6" fill="#F59E0B"/>
+  <circle cx="120" cy="74" r="6" fill="#10B981"/>
+  <text x="150" y="79" fill="#38BDF8" font-family="monospace" font-size="14">Real-Time Chat Platform — WebSockets & Socket.IO</text>
+
+  <rect x="80" y="120" width="640" height="240" rx="12" fill="#0F172A" stroke="#334155" stroke-width="1"/>
+  <rect x="100" y="145" width="300" height="45" rx="8" fill="#0284C7"/>
+  <text x="115" y="172" fill="#FFFFFF" font-family="sans-serif" font-size="13">Hey! WebSockets connection established.</text>
+
+  <rect x="340" y="205" width="320" height="45" rx="8" fill="#1E293B" stroke="#38BDF8" stroke-width="1"/>
+  <text x="355" y="232" fill="#F8FAFC" font-family="sans-serif" font-size="13">Live presence & typing indicators active.</text>
+
+  <rect x="100" y="265" width="280" height="45" rx="8" fill="#0284C7"/>
+  <text x="115" y="292" fill="#FFFFFF" font-family="sans-serif" font-size="13">JWT authentication verified.</text>
+
+  <circle cx="680" cy="165" r="8" fill="#10B981"/>
+  <text x="630" y="170" fill="#10B981" font-family="monospace" font-size="11">ONLINE</text>
+</svg>

@@ -4,13 +4,40 @@ import { Footer } from '../components/Footer';
 import { academicEducation, verifiedCertifications } from '../data/portfolioData';
 import { FaGraduationCap, FaAward, FaFilePdf, FaExternalLinkAlt } from 'react-icons/fa';
 
+import { SEOHead } from '../components/SEOHead';
+
 export const EducationPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.uttamthapa.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Education",
+        "item": "https://www.uttamthapa.com/education"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+      <SEOHead
+        title="Academic Credentials & Certifications | Uttam Thapa"
+        description="Academic Computer Science degree (CGPA 9.56) and verified technical certifications of Uttam Thapa in Full-Stack Web Development, Backend Development, and Google Cloud."
+        canonicalUrl="https://www.uttamthapa.com/education"
+        jsonLd={breadcrumbJsonLd}
+      />
       <Header />
 
       <main className="flex-1 pt-8 sm:pt-10 pb-16 sm:pb-24">

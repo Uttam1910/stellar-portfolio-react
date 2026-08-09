@@ -5,13 +5,40 @@ import { personalInfo } from '../data/portfolioData';
 import { FaFileDownload, FaArrowLeft, FaExternalLinkAlt } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+import { SEOHead } from '../components/SEOHead';
+
 export const ResumePage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.uttamthapa.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Resume",
+        "item": "https://www.uttamthapa.com/resume"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+      <SEOHead
+        title="Uttam Thapa — Software Engineer Resume & Credentials"
+        description="Download and view Uttam Thapa's software engineering resume, highlighting commercial developer experience at Growve, full-stack tech stack, and flagship projects."
+        canonicalUrl="https://www.uttamthapa.com/resume"
+        jsonLd={breadcrumbJsonLd}
+      />
       <Header />
 
       <main className="flex-1 pt-8 sm:pt-10 pb-16 sm:pb-24">

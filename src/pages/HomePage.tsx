@@ -6,9 +6,16 @@ import { flagshipCaseStudies, capabilityProofAreas, growveExperience, academicEd
 import { Link } from 'react-router-dom';
 import { FaArrowRight, FaBuilding, FaGraduationCap, FaExternalLinkAlt, FaGithub, FaCheck } from 'react-icons/fa';
 
+import { SEOHead } from '../components/SEOHead';
+
 export const HomePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans selection:bg-blue-500 selection:text-white">
+      <SEOHead
+        title="Uttam Thapa — Full-Stack Software Engineer & AI Developer"
+        description="Uttam Thapa — Full-Stack Software Engineer at Growve specializing in Next.js, React, Node.js, Fastify, TypeScript, PostgreSQL, multi-tenant SaaS, and AI applications."
+        canonicalUrl="https://www.uttamthapa.com/"
+      />
       <Header />
       
       <main className="flex-1">
@@ -104,9 +111,11 @@ export const HomePage: React.FC = () => {
                           <FaExternalLinkAlt />
                         </a>
                       )}
-                      <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white text-sm">
-                        <FaGithub />
-                      </a>
+                      {project.github && (
+                        <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white text-sm" title="Source Code">
+                          <FaGithub />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

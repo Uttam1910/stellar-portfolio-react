@@ -5,6 +5,8 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { FaArrowLeft, FaExternalLinkAlt, FaGithub, FaCheck, FaServer, FaDatabase, FaLaptopCode, FaCogs, FaShieldAlt, FaRocket } from 'react-icons/fa';
 
+import { SEOHead } from '../components/SEOHead';
+
 export const ProjectCaseStudyPage: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
 
@@ -18,6 +20,11 @@ export const ProjectCaseStudyPage: React.FC = () => {
   if (!project) {
     return (
       <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col justify-between">
+        <SEOHead
+          title="Case Study Not Found | Uttam Thapa"
+          description="The requested engineering case study route does not exist."
+          canonicalUrl="https://www.uttamthapa.com/projects"
+        />
         <Header />
         <main className="max-w-4xl mx-auto px-4 py-32 text-center space-y-6">
           <h1 className="text-3xl font-bold">Case Study Not Found</h1>
@@ -32,6 +39,68 @@ export const ProjectCaseStudyPage: React.FC = () => {
     );
   }
 
+  const getSeoTitle = (slug: string, title: string) => {
+    switch (slug) {
+      case 'sellerzonee': return "SellerZonee — Multi-Tenant Commerce SaaS | Uttam Thapa";
+      case 'velvet-loop': return "Velvet Loop — Full-Stack E-Commerce Platform | Uttam Thapa";
+      case 'lifeos': return "LifeOS — AI Productivity & Semantic Search Workspace | Uttam Thapa";
+      case 'ai-travel-planner': return "AI Travel Planner — AI Itinerary Generation Application | Uttam Thapa";
+      case 'golden-leaf-knots': return "Golden Leaf Knots — Artisanal Product Showcase Platform | Uttam Thapa";
+      case 'edumaster-lms': return "EduMaster LMS — Learning Management System MERN Architecture | Uttam Thapa";
+      case 'realtime-chat-platform': return "Real-Time Chat Platform — WebSocket Messaging System | Uttam Thapa";
+      case 'employee-management': return "Employee Management System — Internal HR Dashboard | Uttam Thapa";
+      case 'backend-services': return "Backend Services — Node.js REST API Architecture | Uttam Thapa";
+      case 'image-py': return "ImagePy — Python Computer Vision Toolkit | Uttam Thapa";
+      case 'airline-demand-prediction': return "Airline Demand Prediction — Machine Learning Forecasting | Uttam Thapa";
+      default: return `${title} — Engineering Case Study | Uttam Thapa`;
+    }
+  };
+
+  const seoTitle = getSeoTitle(project.slug, project.title);
+  const canonicalUrl = `https://www.uttamthapa.com/projects/${project.slug}`;
+
+  const articleJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "@id": `${canonicalUrl}#article`,
+    "url": canonicalUrl,
+    "headline": seoTitle,
+    "description": project.description,
+    "image": project.thumbnail.startsWith('http') ? project.thumbnail : `https://www.uttamthapa.com${project.thumbnail}`,
+    "author": {
+      "@id": "https://www.uttamthapa.com/#person"
+    },
+    "publisher": {
+      "@id": "https://www.uttamthapa.com/#website"
+    },
+    "mainEntityOfPage": canonicalUrl
+  };
+
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.uttamthapa.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Projects",
+        "item": "https://www.uttamthapa.com/projects"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": project.title,
+        "item": canonicalUrl
+      }
+    ]
+  };
+
   const getNodeIcon = (type: string) => {
     switch (type) {
       case 'client': return <FaLaptopCode className="text-blue-400 text-lg" />;
@@ -45,6 +114,14 @@ export const ProjectCaseStudyPage: React.FC = () => {
 
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+      <SEOHead
+        title={seoTitle}
+        description={project.description}
+        canonicalUrl={canonicalUrl}
+        ogImage={project.thumbnail}
+        ogType="article"
+        jsonLd={[articleJsonLd, breadcrumbJsonLd]}
+      />
       <Header />
 
       <main className="flex-1 pt-8 sm:pt-10 pb-16 sm:pb-24">
@@ -87,15 +164,17 @@ export const ProjectCaseStudyPage: React.FC = () => {
                   <FaExternalLinkAlt className="text-xs" />
                 </a>
               )}
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors"
-              >
-                <FaGithub className="text-sm" />
-                <span>Inspect Source Code</span>
-              </a>
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold text-slate-200 bg-slate-800 hover:bg-slate-700 border border-slate-700 rounded-lg transition-colors"
+                >
+                  <FaGithub className="text-sm" />
+                  <span>Inspect Source Code</span>
+                </a>
+              )}
             </div>
           </div>
 

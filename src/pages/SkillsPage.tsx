@@ -3,13 +3,40 @@ import { Header } from '../components/Header';
 import { Footer } from '../components/Footer';
 import { capabilityProofAreas, categorizedTechStack } from '../data/portfolioData';
 
+import { SEOHead } from '../components/SEOHead';
+
 export const SkillsPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.uttamthapa.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Skills",
+        "item": "https://www.uttamthapa.com/skills"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+      <SEOHead
+        title="Technical Skills & Software Engineering Capabilities | Uttam Thapa"
+        description="Software engineering matrix of Uttam Thapa: TypeScript, React, Next.js, Node.js, Fastify, PostgreSQL, Prisma, Redis, BullMQ, WebSockets, Docker, Azure, and AI/ML."
+        canonicalUrl="https://www.uttamthapa.com/skills"
+        jsonLd={breadcrumbJsonLd}
+      />
       <Header />
 
       <main className="flex-1 pt-8 sm:pt-10 pb-16 sm:pb-24">

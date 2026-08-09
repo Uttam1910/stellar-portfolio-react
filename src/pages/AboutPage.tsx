@@ -5,13 +5,40 @@ import { personalInfo } from '../data/portfolioData';
 import { FaGraduationCap, FaBuilding, FaCode, FaEnvelope, FaFileDownload, FaGithub, FaLinkedin } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
+import { SEOHead } from '../components/SEOHead';
+
 export const AboutPage: React.FC = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
 
+  const breadcrumbJsonLd = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.uttamthapa.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "About",
+        "item": "https://www.uttamthapa.com/about"
+      }
+    ]
+  };
+
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
+      <SEOHead
+        title="About Uttam Thapa — Full-Stack Software Engineer"
+        description="Learn about Uttam Thapa, Software Developer at Growve with expertise in full-stack engineering, multi-tenant SaaS systems, backend REST APIs, and AI integrations."
+        canonicalUrl="https://www.uttamthapa.com/about"
+        jsonLd={breadcrumbJsonLd}
+      />
       <Header />
 
       <main className="flex-1 pt-8 sm:pt-10 pb-16 sm:pb-24">

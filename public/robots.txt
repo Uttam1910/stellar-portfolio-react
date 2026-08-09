@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://github.com/Uttam1910/sitemap.xml
+Sitemap: https://www.uttamthapa.com/sitemap.xml
