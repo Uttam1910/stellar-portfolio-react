@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { personalInfo } from '../data/portfolioData';
-import { FaEnvelope, FaLinkedin, FaGithub, FaFileDownload, FaPaperPlane, FaCheckCircle, FaClock } from 'react-icons/fa';
+import { FaEnvelope, FaLinkedin, FaGithub, FaFileDownload, FaPaperPlane, FaCheckCircle, FaClock, FaGlobe } from 'react-icons/fa';
 
 export const ContactSection: React.FC = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
@@ -81,6 +81,19 @@ export const ContactSection: React.FC = () => {
                   <div>
                     <div className="text-[11px] font-mono text-slate-400">Direct Email</div>
                     <div className="text-xs sm:text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">{personalInfo.email}</div>
+                  </div>
+                </a>
+
+                <a
+                  href={personalInfo.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3.5 p-3.5 rounded-lg bg-slate-900 border border-slate-700 hover:border-blue-500 transition-colors group"
+                >
+                  <FaGlobe className="text-blue-400 text-base group-hover:scale-110 transition-transform" />
+                  <div>
+                    <div className="text-[11px] font-mono text-slate-400">Parent Website & Primary Domain</div>
+                    <div className="text-xs sm:text-sm font-semibold text-white group-hover:text-blue-400 transition-colors">www.uttamthapa.com</div>
                   </div>
                 </a>
 

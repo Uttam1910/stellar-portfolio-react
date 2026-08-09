@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { personalInfo } from '../data/portfolioData';
-import { FaArrowUp, FaGithub, FaLinkedin } from 'react-icons/fa';
+import { FaArrowUp, FaGithub, FaLinkedin, FaExternalLinkAlt, FaGlobe } from 'react-icons/fa';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -13,14 +13,28 @@ export const Footer: React.FC = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">
         
         <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-          {/* Left: Identity */}
-          <div className="space-y-1 text-center md:text-left">
-            <div className="font-sans font-bold text-sm text-white">
-              {personalInfo.name} — Full-Stack Software Engineer
+          {/* Left: Identity & Parent Domain Direct Link */}
+          <div className="space-y-1.5 text-center md:text-left">
+            <div className="font-sans font-bold text-sm text-white flex flex-wrap items-center justify-center md:justify-start gap-2">
+              <span>{personalInfo.name} — Full-Stack Software Engineer</span>
             </div>
-            <p className="font-mono text-[11px] text-slate-400">
-              © {new Date().getFullYear()} Uttam Thapa. All rights reserved. Hosted at www.uttamthapa.com.
-            </p>
+            <div className="font-mono text-[11px] text-slate-400 flex flex-wrap items-center justify-center md:justify-start gap-x-2 gap-y-1">
+              <span>© {new Date().getFullYear()} Uttam Thapa. All rights reserved.</span>
+              <span className="text-slate-600 hidden sm:inline">•</span>
+              <span className="text-slate-300 font-medium inline-flex items-center gap-1.5">
+                <FaGlobe className="text-blue-400 text-xs" />
+                <span>Parent Website:</span>
+                <a
+                  href={personalInfo.website}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-400 hover:text-blue-300 underline font-semibold transition-colors inline-flex items-center gap-1"
+                >
+                  {personalInfo.domainDisplay}
+                  <FaExternalLinkAlt className="text-[9px]" />
+                </a>
+              </span>
+            </div>
           </div>
 
           {/* Center: Quick Semantic Route Links */}

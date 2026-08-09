@@ -310,42 +310,51 @@ export const ProjectsArchivePage: React.FC = () => {
                   </span>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {additionalProjects.map((project) => (
-                    <div key={project.slug} className="surface-card p-6 flex flex-col justify-between space-y-4 group">
-                      <div className="space-y-3">
-                        <div className="flex items-center justify-between">
-                          <span className="px-2 py-0.5 rounded bg-slate-800 border border-slate-700 text-[10px] font-mono text-blue-400 uppercase font-semibold">
+                    <div key={project.slug} className="surface-card overflow-hidden flex flex-col justify-between group">
+                      <div>
+                        <div className="relative h-56 overflow-hidden bg-slate-800 border-b border-slate-700/60">
+                          <img
+                            src={project.thumbnail}
+                            alt={project.title}
+                            className="w-full h-full object-cover transform group-hover:scale-[1.02] transition-transform duration-300"
+                            onError={(e) => { (e.target as HTMLImageElement).src = '/images/avtar.png'; }}
+                          />
+                          <div className="absolute top-3 left-3 px-2.5 py-1 rounded bg-slate-900/90 border border-slate-700 text-[11px] font-mono text-blue-400 uppercase font-semibold">
                             {project.category}
-                          </span>
+                          </div>
                         </div>
-                        <h3 className="font-sans text-lg font-bold text-white group-hover:text-blue-400 transition-colors">
-                          {project.title}
-                        </h3>
-                        <p className="text-xs font-mono text-blue-400">{project.oneLiner}</p>
-                        <p className="text-slate-300 text-xs leading-relaxed">{project.description}</p>
-                        <div className="flex flex-wrap gap-1 pt-1">
-                          {project.tech.slice(0, 4).map((t, idx) => (
-                            <span key={idx} className="px-2 py-0.5 rounded bg-slate-900 border border-slate-700/80 text-slate-400 font-mono text-[10px]">
-                              {t}
-                            </span>
-                          ))}
+
+                        <div className="p-6 space-y-3">
+                          <h3 className="font-sans text-xl font-bold text-white group-hover:text-blue-400 transition-colors">
+                            {project.title}
+                          </h3>
+                          <p className="text-xs font-mono text-blue-400">{project.oneLiner}</p>
+                          <p className="text-slate-300 text-xs sm:text-sm leading-relaxed">{project.description}</p>
+                          <div className="flex flex-wrap gap-1.5 pt-1">
+                            {project.tech.slice(0, 4).map((t, idx) => (
+                              <span key={idx} className="px-2 py-0.5 rounded bg-slate-900 border border-slate-700 text-slate-300 font-mono text-[10px]">
+                                {t}
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       </div>
 
-                      <div className="pt-4 border-t border-slate-700/40 flex items-center justify-between">
-                        <Link to={`/projects/${project.slug}`} className="inline-flex items-center gap-1 text-xs font-semibold text-blue-400 hover:text-blue-300">
-                          <span>Technical Details</span>
-                          <FaArrowRight className="text-[9px]" />
+                      <div className="p-6 pt-0 border-t border-slate-700/40 mt-4 flex items-center justify-between">
+                        <Link to={`/projects/${project.slug}`} className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-400 hover:text-blue-300 transition-colors">
+                          <span>View Case Study</span>
+                          <FaArrowRight className="text-[10px]" />
                         </Link>
                         <div className="flex items-center gap-3">
                           {project.liveUrl && (
-                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white text-xs">
+                            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white text-xs" title="Live Demo">
                               <FaExternalLinkAlt />
                             </a>
                           )}
                           {project.github && (
-                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white text-sm">
+                            <a href={project.github} target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-white text-sm" title="Source Code">
                               <FaGithub />
                             </a>
                           )}
