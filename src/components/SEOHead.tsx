@@ -18,7 +18,7 @@ export const personJsonLd = {
   "@id": `${BASE_URL}/#person`,
   "name": "Uttam Thapa",
   "url": `${BASE_URL}/`,
-  "image": `${BASE_URL}/images/avtar.png`,
+  "image": `${BASE_URL}/images/uttam.JPG`,
   "jobTitle": "Full-Stack Software Engineer",
   "description": "Full-Stack Software Engineer building multi-tenant SaaS commerce platforms, scalable REST APIs, microservices, and AI applications.",
   "worksFor": {

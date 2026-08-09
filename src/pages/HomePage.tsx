@@ -228,13 +228,21 @@ export const HomePage: React.FC = () => {
             </div>
 
             <div className="surface-card p-6 sm:p-8 flex flex-col sm:flex-row sm:items-center justify-between gap-6 border-l-4 border-l-blue-500">
-              <div className="space-y-2 max-w-2xl">
+              <div className="space-y-3 max-w-2xl">
                 <div className="inline-flex items-center gap-2 text-blue-400 font-mono text-xs">
                   <FaGraduationCap />
-                  <span>B.Tech in Computer Science & Engineering (AI/ML)</span>
+                  <span>B.Tech in Computer Science & Engineering (AI/ML Specialization)</span>
                 </div>
                 <h3 className="font-sans text-lg font-bold text-white">{academicEducation.institution}</h3>
                 <p className="text-slate-300 text-xs">{academicEducation.details}</p>
+                <div className="flex flex-wrap items-center gap-2 pt-1">
+                  <span className="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 text-blue-400 font-mono text-[11px]">
+                    HSC 12th Science: 91.00%
+                  </span>
+                  <span className="px-2.5 py-1 rounded bg-slate-900 border border-slate-700 text-blue-400 font-mono text-[11px]">
+                    SSC 10th Grade: 87.00%
+                  </span>
+                </div>
               </div>
               <div className="p-4 rounded-lg bg-slate-900 border border-slate-700 text-center min-w-[180px]">
                 <div className="text-[10px] font-mono text-slate-400 uppercase">CGPA Score</div>

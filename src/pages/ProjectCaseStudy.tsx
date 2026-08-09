@@ -311,6 +311,29 @@ export const ProjectCaseStudyPage: React.FC = () => {
             </p>
           </div>
 
+          {/* Contextual Semantic Internal Links */}
+          <div className="surface-card p-6 rounded-xl border border-slate-700/80 space-y-3">
+            <div className="text-xs font-mono text-blue-400 uppercase tracking-widest">
+              EXPLORE RELATED ENGINEERING DOMAINS
+            </div>
+            <p className="text-xs text-slate-300 leading-relaxed">
+              Discover how {project.title} connects to broader full-stack systems and technical architectures built by Uttam Thapa:
+            </p>
+            <div className="flex flex-wrap items-center gap-x-4 gap-y-2 text-xs font-semibold pt-1">
+              <Link to="/skills" className="text-blue-400 hover:text-blue-300 underline inline-flex items-center gap-1">
+                <span>Explore technical skills matrix</span>
+              </Link>
+              <span className="text-slate-600 hidden sm:inline">•</span>
+              <Link to="/experience" className="text-blue-400 hover:text-blue-300 underline inline-flex items-center gap-1">
+                <span>View commercial software engineering experience</span>
+              </Link>
+              <span className="text-slate-600 hidden sm:inline">•</span>
+              <Link to="/contact" className="text-blue-400 hover:text-blue-300 underline inline-flex items-center gap-1">
+                <span>Get in touch with Uttam Thapa</span>
+              </Link>
+            </div>
+          </div>
+
           {/* 11 — External Links */}
           <div className="pt-8 border-t border-slate-700/80 flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-4">

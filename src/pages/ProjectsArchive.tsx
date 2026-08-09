@@ -62,7 +62,7 @@ export const ProjectsArchivePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
       <SEOHead
-        title="Software Engineering Projects & Case Studies | Uttam Thapa"
+        title="Software Engineering Projects | Uttam Thapa"
         description="Curated showcase of engineering projects by Uttam Thapa, including multi-tenant SaaS platforms (SellerZonee), e-commerce engines (Velvet Loop), AI productivity tools (LifeOS), and backend microservices."
         canonicalUrl="https://www.uttamthapa.com/projects"
         jsonLd={breadcrumbJsonLd}

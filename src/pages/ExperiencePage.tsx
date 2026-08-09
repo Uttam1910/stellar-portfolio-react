@@ -33,7 +33,7 @@ export const ExperiencePage: React.FC = () => {
   return (
     <div className="min-h-screen bg-slate-900 text-slate-100 flex flex-col font-sans">
       <SEOHead
-        title="Uttam Thapa — Software Engineering Experience & Track Record"
+        title="Uttam Thapa — Software Engineering Experience"
         description="Commercial software engineering track record of Uttam Thapa at Growve, working with Next.js, Fastify, Node.js, PostgreSQL multi-tenant architecture, BullMQ, Redis, webhooks, and Azure."
         canonicalUrl="https://www.uttamthapa.com/experience"
         jsonLd={breadcrumbJsonLd}

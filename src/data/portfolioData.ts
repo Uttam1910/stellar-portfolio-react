@@ -40,6 +40,11 @@ export interface EducationEntry {
   period: string;
   achievement: string;
   details: string;
+  badge?: string;
+  score?: string;
+  scoreLabel?: string;
+  type?: 'degree' | 'hsc' | 'ssc';
+  highlights?: string[];
 }
 
 export interface CertEntry {
@@ -590,9 +595,55 @@ export const academicEducation: EducationEntry = {
   degree: "B.Tech in Computer Science & Engineering (Specialization in AI & ML)",
   institution: "Mumbai University — MCT's Rajiv Gandhi Institute of Technology (RGIT), Mumbai",
   period: "December 2021 – June 2025 (Completed)",
-  achievement: "CGPA: 9.56 (First Class with Distinction across all 4 years)",
-  details: "Coursework focused on Data Structures & Algorithms, Operating Systems, Database Management Systems, Machine Learning, Web Development, and Computer Networks."
+  achievement: "CGPA: 9.56 (First Class with Distinction)",
+  score: "9.56",
+  scoreLabel: "CGPA (Distinction)",
+  badge: "Bachelor of Technology Degree",
+  type: "degree",
+  details: "Comprehensive 4-year Computer Science & Engineering degree with specialized coursework in Artificial Intelligence and Machine Learning. Maintained a cumulative CGPA of 9.56 (First Class with Distinction) across all academic semesters.",
+  highlights: [
+    "CGPA 9.56 — First Class with Distinction honors across all 4 academic years",
+    "AI & ML Specialization: Neural Networks, Computer Vision, Deep Learning, Natural Language Processing, and Vector Embeddings",
+    "Core CS Curriculum: Data Structures & Algorithms, Operating Systems, Database Management Systems (DBMS), Computer Networks, Software Engineering Architecture",
+    "Applied Systems: Built high-throughput backend microservices, multi-tenant SaaS databases, and ML demand prediction engines"
+  ]
 };
+
+export const allAcademicEducation: EducationEntry[] = [
+  academicEducation,
+  {
+    degree: "Higher Secondary Certificate (HSC — 12th Grade Science)",
+    institution: "V.K. Krishna Menon College of Commerce & Economics, Mumbai",
+    period: "August 2019 – May 2021",
+    achievement: "12th Grade Score: 91.00% (First Class Honors)",
+    score: "91.00%",
+    scoreLabel: "HSC Percentage",
+    badge: "Higher Secondary Certificate",
+    type: "hsc",
+    details: "Completed Higher Secondary Education in the Science stream with a rigorous curriculum focusing on Computer Science, Advanced Mathematics, Physics, and Chemistry.",
+    highlights: [
+      "Secured 91.00% in Maharashtra State Board HSC Examinations",
+      "Specialized study in Computer Science fundamentals, digital logic circuit design, and C++ algorithm implementation",
+      "Strong mathematical foundation in calculus, matrix algebra, statistics, and coordinate geometry"
+    ]
+  },
+  {
+    degree: "Secondary School Certificate (SSC — 10th Grade)",
+    institution: "S.V.B’s Oxford High School, Mumbai",
+    period: "Completed May 2019",
+    achievement: "10th Grade Score: 87.00% (Distinction)",
+    score: "87.00%",
+    scoreLabel: "SSC Percentage",
+    badge: "Secondary School Certificate",
+    type: "ssc",
+    details: "Completed Secondary School Certificate with distinction honors, establishing fundamental analytical skills in Mathematics, General Science, and Information Technology.",
+    highlights: [
+      "Secured 87.00% in Maharashtra State Board SSC Examinations",
+      "Achieved Academic Distinction in Mathematics, Science, and English",
+      "Active participant in school computer science labs and inter-school science competitions"
+    ]
+  }
+];
 
 export const verifiedCertifications: CertEntry[] = [
   {
