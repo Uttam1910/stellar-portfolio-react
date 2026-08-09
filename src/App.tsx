@@ -1,37 +1,31 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Sidebar from './components/Sidebar';
-import Home from './pages/Home';
-import About from './pages/About';
-import Experience from './pages/Experience';
-import Projects from './pages/Projects';
-import Skills from './pages/Skills';
-import Education from './pages/Education';
-import Contact from './pages/Contact';
-import Certificates from './pages/Certificates';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-
-
+import { HomePage } from './pages/HomePage';
+import { AboutPage } from './pages/AboutPage';
+import { ExperiencePage } from './pages/ExperiencePage';
+import { ProjectsArchivePage } from './pages/ProjectsArchive';
+import { ProjectCaseStudyPage } from './pages/ProjectCaseStudy';
+import { SkillsPage } from './pages/SkillsPage';
+import { EducationPage } from './pages/EducationPage';
+import { ContactPage } from './pages/ContactPage';
+import { ResumePage } from './pages/ResumePage';
 
 function App() {
   return (
     <Router>
-      <div className="flex min-h-screen bg-gray-900">
-        <Sidebar />
-        {/* Main content area - accounts for fixed sidebar on large screens */}
-        <div className="flex-1 lg:ml-64 min-h-screen">
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="/skills" element={<Skills />} />
-            <Route path="/Certificates" element={<Certificates />} />
-            <Route path="/education" element={<Education />} />
-            <Route path="/contact" element={<Contact />} />
-          </Routes>
-        </div>
-      </div>
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/experience" element={<ExperiencePage />} />
+        <Route path="/projects" element={<ProjectsArchivePage />} />
+        <Route path="/projects/:slug" element={<ProjectCaseStudyPage />} />
+        <Route path="/skills" element={<SkillsPage />} />
+        <Route path="/education" element={<EducationPage />} />
+        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/resume" element={<ResumePage />} />
+        <Route path="/Certificates" element={<EducationPage />} />
+      </Routes>
     </Router>
   );
 }

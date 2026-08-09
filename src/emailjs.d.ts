@@ -1,5 +1,10 @@
 declare module '@emailjs/browser' {
-    const send: (serviceId: string, templateId: string, templateParams: object) => Promise<{ status: number; text: string }>;
-    export { send };
-  }
+  export const init: (publicKey: string) => void;
+  export const send: (
+    serviceId: string,
+    templateId: string,
+    templateParams: Record<string, unknown>,
+    options?: string | { publicKey?: string }
+  ) => Promise<{ status: number; text: string }>;
+}
   
