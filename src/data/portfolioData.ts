@@ -430,10 +430,74 @@ export const archiveProjects: ProjectCaseStudy[] = [
     currentState: "Live deployed application."
   },
   {
+    slug: "pokedex-app",
+    title: "Pokedex App",
+    category: "Frontend",
+    oneLiner: "Pokédex web app for searching, browsing, and viewing Pokémon details.",
+    description: "A React-based Pokédex application using the PokéAPI to fetch Pokémon data, show stat cards, and support responsive search interactions.",
+    github: "https://github.com/Uttam1910/Pokedex-App",
+    liveUrl: "https://pokedex-app-eight-sandy.vercel.app/",
+    thumbnail: "/images/pokedex.jpg",
+    tech: ["React", "Tailwind CSS", "PokéAPI", "JavaScript", "Responsive UI"],
+    featured: false,
+    tier: "supporting",
+    problem: "Pokémon fans need a fast, searchable Pokédex experience with clear stats and type information.",
+    solution: "Built a responsive React application that loads Pokémon data from PokéAPI and presents searchable detail cards with images and stats.",
+    keyFeatures: [
+      "Pokédex search and filtering",
+      "Pokémon detail view with stats and types",
+      "Responsive mobile-first layout",
+      "API-driven Pokémon data retrieval"
+    ],
+    architectureNodes: [
+      { name: "React Client", type: "client" },
+      { name: "PokéAPI Data Fetching", type: "external" },
+      { name: "Client-side UI Logic", type: "logic" }
+    ],
+    technicalDecisions: [
+      { title: "React with API Fetching", reasoning: "Enables dynamic Pokémon data retrieval and reusable UI components." },
+      { title: "Responsive Design", reasoning: "Ensures the Pokédex works well on mobile and desktop screens." }
+    ],
+    deployment: "Vercel Platform",
+    currentState: "Live deployed MVP."
+  },
+  {
+    slug: "instagram-clone",
+    title: "Instagram Clone",
+    category: "Frontend",
+    oneLiner: "Instagram-style clone showcasing a social feed experience with modern UI styling.",
+    description: "A responsive Instagram clone built with modern frontend techniques. It features feed cards, image layout styling, and polished user interactions for a social media demo.",
+    github: "https://github.com/Uttam1910/instagram-clone",
+    liveUrl: "https://instagram-clone-eta-pied.vercel.app/",
+    thumbnail: "/images/avtar.png",
+    tech: ["React", "Tailwind CSS", "JavaScript", "Responsive UI"],
+    featured: false,
+    tier: "supporting",
+    problem: "Social media prototypes need clean, responsive presentation layers and consistent feed interactions.",
+    solution: "Built a styled Instagram-style web experience with responsive layout, post cards, and fluid interaction design.",
+    keyFeatures: [
+      "Responsive social feed layout",
+      "Styled post cards with image previews",
+      "Modern UI and responsive mobile support",
+      "Live Vercel deployment"
+    ],
+    architectureNodes: [
+      { name: "React UI", type: "client" },
+      { name: "Responsive Styling", type: "logic" }
+    ],
+    technicalDecisions: [
+      { title: "Component-driven UI", reasoning: "Provides reusable feed card and layout components across the app." },
+      { title: "Vercel Deployment", reasoning: "Delivers fast, globally available static hosting for the frontend demo." }
+    ],
+    deployment: "Vercel Platform",
+    currentState: "Live deployed frontend demo."
+  },
+  {
     slug: "backend-services",
     title: "Backend Services",
     category: "Backend / API Engineering",
     oneLiner: "Reusable backend API modules, JWT authentication middleware, and Redis rate limiting architecture.",
+
     description: "A backend infrastructure codebase implementing standardized REST API routing, bcrypt password hashing, JWT bearer authorization middleware, input validation, and Redis-backed rate limiting.",
     github: "https://github.com/Uttam1910/Backend",
     thumbnail: "/images/projects/backend-services.png",

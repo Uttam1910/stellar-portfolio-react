@@ -87,8 +87,18 @@ const Projects = () => {
       title: "Pokedex App",
       thumbnail: "/images/pokedex.jpg",
       githubLink: "https://github.com/Uttam1910/Pokedex-App",
+      website: "https://pokedex-app-eight-sandy.vercel.app/",
       description:
         "A Pokedex application that allows users to search for Pokémon and view detailed information about each one. The app is built with React and integrates with the PokéAPI to fetch data dynamically.",
+      category: "frontend",
+    },
+    {
+      title: "Instagram Clone",
+      thumbnail: "/images/imp.jpg",
+      githubLink: "#",
+      website: "https://instagram-clone-eta-pied.vercel.app/",
+      description:
+        "A responsive Instagram-style clone built with modern frontend technologies, featuring a social feed, styled UI, and interactive user experience.",
       category: "frontend",
     },
     {
