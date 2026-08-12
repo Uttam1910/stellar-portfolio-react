@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#06131a" />
+  <defs>
+    <linearGradient id="storeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0891b2" />
+      <stop offset="50%" stop-color="#0d9488" />
+      <stop offset="100%" stop-color="#10b981" />
+    </linearGradient>
+  </defs>
+  <circle cx="220" cy="520" r="240" fill="#0891b2" opacity="0.08" />
+  <circle cx="980" cy="180" r="220" fill="#10b981" opacity="0.08" />
+  <g transform="translate(80,140)">
+    <rect x="0" y="0" width="1040" height="440" rx="24" fill="#091e28" stroke="url(#storeGrad)" stroke-width="2" stroke-opacity="0.3" />
+    <!-- Badge -->
+    <rect x="420" y="50" width="200" height="36" rx="18" fill="#0d9488" opacity="0.9" />
+    <text x="520" y="73" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="700" letter-spacing="1">HTML / CSS / JS</text>
+    <!-- Title -->
+    <text x="520" y="180" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="52" fill="#f0fdf4" font-weight="800">Cara E-Commerce Store</text>
+    <text x="520" y="235" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#99f6e4" font-weight="500">Responsive Static E-Commerce Storefront Template</text>
+    <!-- Tags -->
+    <g transform="translate(190, 290)">
+      <rect x="0" y="0" width="150" height="34" rx="8" fill="#134e4a" stroke="#0d9488" stroke-opacity="0.4" />
+      <text x="75" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#ccfbf1">HTML5 &amp; CSS3</text>
+      
+      <rect x="170" y="0" width="150" height="34" rx="8" fill="#134e4a" stroke="#0d9488" stroke-opacity="0.4" />
+      <text x="245" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#ccfbf1">Vanilla JS Logic</text>
+
+      <rect x="340" y="0" width="150" height="34" rx="8" fill="#134e4a" stroke="#0d9488" stroke-opacity="0.4" />
+      <text x="415" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#ccfbf1">Multi-page Layout</text>
+
+      <rect x="510" y="0" width="150" height="34" rx="8" fill="#134e4a" stroke="#0d9488" stroke-opacity="0.4" />
+      <text x="585" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#ccfbf1">Cart &amp; Checkout UI</text>
+    </g>
+  </g>
+</svg>

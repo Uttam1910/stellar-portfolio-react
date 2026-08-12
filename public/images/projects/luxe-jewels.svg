@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#0d0b14" />
+  <defs>
+    <linearGradient id="jewelGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f59e0b" />
+      <stop offset="50%" stop-color="#d97706" />
+      <stop offset="100%" stop-color="#7c3aed" />
+    </linearGradient>
+    <linearGradient id="aiGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#a855f7" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <circle cx="250" cy="520" r="240" fill="#f59e0b" opacity="0.08" />
+  <circle cx="950" cy="180" r="220" fill="#7c3aed" opacity="0.08" />
+  <g transform="translate(80,140)">
+    <rect x="0" y="0" width="1040" height="440" rx="24" fill="#141122" stroke="url(#jewelGrad)" stroke-width="2" stroke-opacity="0.3" />
+    <!-- Badge -->
+    <rect x="420" y="50" width="200" height="36" rx="18" fill="url(#aiGlow)" opacity="0.9" />
+    <text x="520" y="73" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="700" letter-spacing="1">GEMINI AI POWERED</text>
+    <!-- Title -->
+    <text x="520" y="180" text-anchor="middle" font-family="Georgia, serif" font-size="52" fill="#fef3c7" font-weight="700">Luxe Jewels</text>
+    <text x="520" y="235" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#fde68a" font-weight="500">AI-Powered Luxury Jewelry E-Commerce Storefront</text>
+    <!-- Tags -->
+    <g transform="translate(180, 290)">
+      <rect x="0" y="0" width="140" height="34" rx="8" fill="#2d2242" stroke="#f59e0b" stroke-opacity="0.4" />
+      <text x="70" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#fef3c7">Gemini API</text>
+      
+      <rect x="160" y="0" width="150" height="34" rx="8" fill="#2d2242" stroke="#f59e0b" stroke-opacity="0.4" />
+      <text x="235" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#fef3c7">AI Recommendations</text>
+
+      <rect x="330" y="0" width="160" height="34" rx="8" fill="#2d2242" stroke="#f59e0b" stroke-opacity="0.4" />
+      <text x="410" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#fef3c7">Jewelry Showcase</text>
+
+      <rect x="500" y="0" width="170" height="34" rx="8" fill="#2d2242" stroke="#f59e0b" stroke-opacity="0.4" />
+      <text x="585" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#fef3c7">React &amp; TypeScript</text>
+    </g>
+  </g>
+</svg>

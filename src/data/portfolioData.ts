@@ -625,6 +625,98 @@ export const archiveProjects: ProjectCaseStudy[] = [
     technicalDecisions: [{ title: "Async Fetching", reasoning: "Clean API data transformation." }],
     deployment: "Vercel Platform",
     currentState: "Live prototype."
+  },
+  {
+    slug: "luxe-jewels",
+    title: "Luxe Jewels AI E-Commerce",
+    category: "AI / E-Commerce",
+    oneLiner: "Artisanal jewelry shop with AI recommendations powered by Google Gemini API.",
+    description: "A luxury e-commerce storefront showcasing artisanal jewelry items with personalized AI product recommendations powered by the Google Gemini API, dynamic catalog browsing, interactive view modals, and a dark luxury design theme.",
+    liveUrl: "https://luxe-jewels-e-commerce-demo.vercel.app/",
+    thumbnail: "/images/projects/luxe-jewels.svg",
+    tech: ["React", "Google Gemini API", "Tailwind CSS", "TypeScript", "Vercel"],
+    featured: false,
+    tier: "supporting",
+    problem: "Artisanal jewelry buyers require customized recommendation assistance to match personal style preferences with gemstone collections.",
+    solution: "Engineered an AI recommendation workflow leveraging Google Gemini API endpoints to generate contextual jewelry suggestions directly within product card views.",
+    keyFeatures: [
+      "Google Gemini API integration for personalized AI product recommendations",
+      "Interactive jewelry preview modals with detailed specifications",
+      "Category filtering for rings, necklaces, bracelets, and luxury items",
+      "High-contrast luxury design theme with smooth transitions"
+    ],
+    architectureNodes: [
+      { name: "React Storefront Client", type: "client" },
+      { name: "Gemini API Engine", type: "logic" },
+      { name: "Google Gemini AI API", type: "external" },
+      { name: "Vercel Platform", type: "external" }
+    ],
+    technicalDecisions: [
+      { title: "Google Gemini API", reasoning: "Delivers natural-language context analysis for tailored jewelry recommendations." },
+      { title: "React Component State", reasoning: "Facilitates seamless filter changes and modal drawer state management." }
+    ],
+    deployment: "Vercel Platform",
+    currentState: "Live active web application."
+  },
+  {
+    slug: "react-image-gallery",
+    title: "Lumora Image Gallery",
+    category: "Frontend / Media",
+    oneLiner: "Visual discovery and inspiration gallery web platform built with React.",
+    description: "A high-performance visual discovery gallery application offering high-resolution photography collections, interactive category filtering, lightbox image modal previews, and fast client-side searching.",
+    liveUrl: "https://react-image-gallery-ebon.vercel.app/",
+    thumbnail: "/images/projects/react-image-gallery.svg",
+    tech: ["React", "JavaScript", "Tailwind CSS", "Responsive UI", "Vercel"],
+    featured: false,
+    tier: "supporting",
+    problem: "Media showcases require fluid, responsive image grids with instantaneous modal previews without viewport layout jumps.",
+    solution: "Designed a dynamic React image gallery featuring category tag filtering, full-screen lightbox previews, and search filters.",
+    keyFeatures: [
+      "Dynamic photography showcase with high-res media rendering",
+      "Category tab navigation (Architecture, Space, Nature, Art)",
+      "Full-screen interactive lightbox modal with image detail view",
+      "Real-time search filter for instant visual discovery"
+    ],
+    architectureNodes: [
+      { name: "React Gallery Client", type: "client" },
+      { name: "Lightbox & Filter Engine", type: "logic" },
+      { name: "Vercel Hosting", type: "external" }
+    ],
+    technicalDecisions: [
+      { title: "React Lightbox State", reasoning: "Maintains smooth image transitions and accessible modal keyboard controls." }
+    ],
+    deployment: "Vercel Platform",
+    currentState: "Live active web application."
+  },
+  {
+    slug: "ecommerce-static-template",
+    title: "Cara Store E-Commerce",
+    category: "Frontend / Web Design",
+    oneLiner: "Fully responsive static e-commerce storefront template built in HTML, CSS, and JS.",
+    description: "A clean, responsive static e-commerce web platform engineered with vanilla HTML5, CSS3, and JavaScript featuring product grid showcases, interactive cart views, blog pages, and multi-page layout structures.",
+    liveUrl: "https://e-commerce-website-wheat-ten-34.vercel.app/",
+    thumbnail: "/images/projects/ecommerce-static-template.svg",
+    tech: ["HTML5", "CSS3", "JavaScript", "Responsive UX", "Vercel"],
+    featured: false,
+    tier: "supporting",
+    problem: "Building lightweight, fast-loading e-commerce landing pages without framework overhead.",
+    solution: "Crafted a fully custom static e-commerce storefront using modular HTML5 semantics, custom CSS flex/grid system, and vanilla JS UI scripts.",
+    keyFeatures: [
+      "Multi-page responsive navigation (Home, Shop, Blog, About, Contact, Cart)",
+      "Interactive product card hover effects and shopping cart interface",
+      "Newsletter subscription section and promotional banner layouts",
+      "100% responsive design across mobile, tablet, and desktop viewports"
+    ],
+    architectureNodes: [
+      { name: "HTML5/CSS3 Semantic Client", type: "client" },
+      { name: "Vanilla JS UI Logic", type: "logic" },
+      { name: "Vercel Edge Hosting", type: "external" }
+    ],
+    technicalDecisions: [
+      { title: "Pure Vanilla HTML/CSS/JS", reasoning: "Ensures near-instant load times and zero dependency overhead." }
+    ],
+    deployment: "Vercel Platform",
+    currentState: "Live static web template."
   }
 ];
 

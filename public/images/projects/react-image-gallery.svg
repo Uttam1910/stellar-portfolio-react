@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="720" viewBox="0 0 1200 720">
+  <rect width="1200" height="720" fill="#090d16" />
+  <defs>
+    <linearGradient id="galleryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6366f1" />
+      <stop offset="50%" stop-color="#8b5cf6" />
+      <stop offset="100%" stop-color="#ec4899" />
+    </linearGradient>
+  </defs>
+  <circle cx="200" cy="500" r="250" fill="#6366f1" opacity="0.08" />
+  <circle cx="1000" cy="200" r="220" fill="#ec4899" opacity="0.08" />
+  <g transform="translate(80,140)">
+    <rect x="0" y="0" width="1040" height="440" rx="24" fill="#0f172a" stroke="url(#galleryGrad)" stroke-width="2" stroke-opacity="0.3" />
+    <!-- Badge -->
+    <rect x="430" y="50" width="180" height="36" rx="18" fill="#6366f1" opacity="0.9" />
+    <text x="520" y="73" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#ffffff" font-weight="700" letter-spacing="1">REACT GALLERY</text>
+    <!-- Title -->
+    <text x="520" y="180" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="52" fill="#f8fafc" font-weight="800">Lumora Image Gallery</text>
+    <text x="520" y="235" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="22" fill="#c7d2fe" font-weight="500">Visual Discovery &amp; Inspiration Web Platform</text>
+    <!-- Tags -->
+    <g transform="translate(190, 290)">
+      <rect x="0" y="0" width="150" height="34" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-opacity="0.4" />
+      <text x="75" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#e0e7ff">React &amp; Tailwind</text>
+      
+      <rect x="170" y="0" width="150" height="34" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-opacity="0.4" />
+      <text x="245" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#e0e7ff">Lightbox Modal</text>
+
+      <rect x="340" y="0" width="150" height="34" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-opacity="0.4" />
+      <text x="415" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#e0e7ff">Category Filters</text>
+
+      <rect x="510" y="0" width="150" height="34" rx="8" fill="#1e1b4b" stroke="#6366f1" stroke-opacity="0.4" />
+      <text x="585" y="22" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-size="14" fill="#e0e7ff">Search &amp; Grid</text>
+    </g>
+  </g>
+</svg>
