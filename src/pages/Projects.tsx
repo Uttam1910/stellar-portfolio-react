@@ -66,10 +66,10 @@ const Projects = () => {
     },
     // Existing projects (kept after the new ones)
     {
-      title: "Learning Management System",
-      thumbnail: "/images/LMS.png",
+      title: "Learning Management System (EduMaster)",
+      thumbnail: "/images/projects/edumaster.png",
       githubLink: "https://github.com/Uttam1910/EduMaster",
-      website: "#",
+      website: "https://edu-master-six.vercel.app/",
       description:
         "A comprehensive Learning Management System built with MERN stack, providing features like course creation, user enrollment, and lecture management. The system also includes user authentication and authorization with role-based access control for administrators and students.",
       category: "fullstack",

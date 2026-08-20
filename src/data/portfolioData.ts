@@ -344,7 +344,8 @@ export const flagshipCaseStudies: ProjectCaseStudy[] = [
     oneLiner: "Learning management system with role-based access control and course management.",
     description: "A comprehensive Learning Management System built on the MERN stack facilitating instructor course creation, lecture delivery, student enrollment pipelines, and JWT authentication.",
     github: "https://github.com/Uttam1910/EduMaster",
-    thumbnail: "/images/LMS.png",
+    liveUrl: "https://edu-master-six.vercel.app/",
+    thumbnail: "/images/projects/edumaster.png",
     tech: ["React", "Vite", "Node.js", "Express.js", "MongoDB", "JWT Auth"],
     featured: true,
     tier: "flagship",
@@ -367,8 +368,8 @@ export const flagshipCaseStudies: ProjectCaseStudy[] = [
       { title: "JWT Authentication", reasoning: "Stateless authentication scalable across distributed API endpoints." }
     ],
     security: ["Password hashing with bcrypt", "JWT bearer token authorization middleware"],
-    deployment: "GitHub repository source code case study",
-    currentState: "Completed full-stack open-source repository."
+    deployment: "Vercel Platform & MongoDB Cloud",
+    currentState: "Active production deployment hosting course catalog and student enrollment."
   }
 ];
 
