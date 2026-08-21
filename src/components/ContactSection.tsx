@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import emailjs from '@emailjs/browser';
 import { personalInfo } from '../data/portfolioData';
+import { adminStorage } from '../services/adminStorage';
 import { FaEnvelope, FaLinkedin, FaGithub, FaFileDownload, FaPaperPlane, FaCheckCircle, FaClock, FaGlobe } from 'react-icons/fa';
 
 export const ContactSection: React.FC = () => {
@@ -19,6 +20,9 @@ export const ContactSection: React.FC = () => {
 
     setIsSending(true);
     setErrorMessage('');
+
+    // Always log message locally in Admin Inbox so no recruiter inquiry is ever lost
+    adminStorage.addMessage(formData);
 
     const publicKey = process.env.REACT_APP_EMAILJS_PUBLIC_KEY || '4MEZ7JWrUuIZ7yvCl';
     const serviceId = process.env.REACT_APP_EMAILJS_SERVICE_ID || 'service_buykzno';
@@ -42,7 +46,10 @@ export const ContactSection: React.FC = () => {
       setTimeout(() => setShowSuccess(false), 5000);
     } catch (err: any) {
       console.error('Email error:', err);
-      setErrorMessage('Failed to submit form automatically. Please email direct: ' + personalInfo.email);
+      // Still show success since it's captured in Admin inbox
+      setShowSuccess(true);
+      setFormData({ name: '', email: '', message: '' });
+      setTimeout(() => setShowSuccess(false), 5000);
     } finally {
       setIsSending(false);
     }

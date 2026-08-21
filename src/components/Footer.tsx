@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { personalInfo } from '../data/portfolioData';
-import { FaArrowUp, FaGithub, FaLinkedin, FaExternalLinkAlt, FaGlobe } from 'react-icons/fa';
+import { FaArrowUp, FaGithub, FaLinkedin, FaExternalLinkAlt, FaGlobe, FaLock } from 'react-icons/fa';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -49,7 +49,7 @@ export const Footer: React.FC = () => {
             <Link to="/resume" className="hover:text-blue-400 transition-colors">Resume</Link>
           </nav>
 
-          {/* Right: Social & Back to Top */}
+          {/* Right: Social & Back to Top & Admin */}
           <div className="flex items-center gap-4">
             <a
               href={personalInfo.github}
@@ -69,6 +69,14 @@ export const Footer: React.FC = () => {
             >
               <FaLinkedin />
             </a>
+            <Link
+              to="/admin"
+              className="text-slate-600 hover:text-slate-300 transition-colors text-xs p-1"
+              title="Admin Portal"
+              aria-label="Admin Portal Access"
+            >
+              <FaLock />
+            </Link>
             <button
               onClick={scrollToTop}
               className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded bg-slate-800 border border-slate-700 text-slate-300 hover:text-white transition-colors font-mono text-[11px]"
